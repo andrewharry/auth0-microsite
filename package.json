@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --output-path docs --base-href /auth0-microsite/ --deploy-url https://andrewharry.github.io/auth0-microsite/"
   },
   "private": true,
   "dependencies": {
