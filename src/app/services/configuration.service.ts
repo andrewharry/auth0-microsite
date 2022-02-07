@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { environment, Environment, CountryConfiguration, Country, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/environment';
+import { Environment, CountryConfiguration, Country, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
+import { environment } from '../../environments/environment';
 
 const DEFAULT_COUNTRY = environment.countryCode as Country;
 
