@@ -8,11 +8,11 @@ export class SetupService {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     console.info('Registering Custom SVG Icons');
     this.matIconRegistry.addSvgIcon(
-      'eye', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/eye.svg')
+      'eye', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/eye.svg')
     );
 
     this.matIconRegistry.addSvgIcon(
-      'eye-closed', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/eye-closed.svg')
+      'eye-closed', this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/eye-closed.svg')
     );
   }
 }
