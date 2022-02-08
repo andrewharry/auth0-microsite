@@ -25,10 +25,10 @@ export const environment: Environment = {
     // these two get replaced by the data passed in the rendered index.html
     domain: 'humm-au-sandbox.au.auth0.com',
     clientID: '9XCRGeQeqzrxft8A3xnUCTEqhODl9cM0',
-    redirectUri: 'http://localhost:4200/Success',
+    redirectUri: 'http://localhost:4200/#/Success',
     state: '',
     audience: '',
-    responseType: 'code',
+    responseType: 'code',  
     scope: 'openid profile email'
   },
   otp: {

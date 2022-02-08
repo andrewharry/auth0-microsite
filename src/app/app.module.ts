@@ -13,10 +13,12 @@ import { LandingComponent } from './landing/landing.component';
 import { PasswordInputComponent } from './landing/components/password-input.component';
 import { UsernameInputComponent } from './landing/components/username-input.component';
 
+import { ForgotPasswordLink } from './landing/components/forgot-password-link';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 import { SetupService } from './services/setup.service';
 import { AuthService } from './services/auth.service';
 import { SnackBarService } from './services/snack-bar.service';
-import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { SuccessComponent } from './success/success.component';
     LandingComponent,
     PasswordInputComponent,
     UsernameInputComponent,
-    SuccessComponent
+    ForgotPasswordLink,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
