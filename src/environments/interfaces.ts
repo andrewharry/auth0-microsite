@@ -44,12 +44,11 @@ import { AuthOptions } from 'auth0-js';
   export type Configuration = {
     countryCode: string,
     defaultCountry: Country,
-    hostDomain: string,
     root: string,
     countries: {
       [key in Country]: CountryConfiguration;
     },
-    auth0: Auth0Config,
+    auth0?: Auth0Config,
     otp: OtpConfig,
     password: PasswordConfig,
     idp: IdpConfig,

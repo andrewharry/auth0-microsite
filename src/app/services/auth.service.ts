@@ -93,7 +93,7 @@ export class AuthService {
         redirectUri: this.cfg.auth0Config.redirectUri,
         audience: this.cfg.auth0Config.audience,
         realm: 'User-Pass-Auth-Auth0-DB',
-        state: this.cfg.auth0Config.state
+        //state: this.cfg.auth0Config.state
       }, (err, res) => {
         err ? reject(err) : resolve(res);
       });
@@ -101,7 +101,7 @@ export class AuthService {
   }
 
   logout(clientId: string): void {
-    this.auth0Client.logout({ clientID: clientId, returnTo: "http://localhost:4200/Login" });
+    this.auth0Client.logout({ clientID: clientId });
   }
 
   public initializeClient(options?: Partial<AuthOptions>): void {

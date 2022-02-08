@@ -2,7 +2,6 @@ import { Environment, Country } from './interfaces';
 
 export const environment: Environment = {
   production: true,
-  hostDomain: '#{ idp-spa-cdn-endpoint-url-noslash }#',
   root: 'https://andrewharry.github.io/auth0-microsite',
   countryCode: '#{ idp-country-code }#',
   defaultCountry: Country.AU,
@@ -17,16 +16,6 @@ export const environment: Environment = {
       phoneDisplayMask: 'XX XXXX XXXX',
       phonePattern: /^0?2\d{7,9}$/,
     },
-  },
-  auth0: {
-    // these two get replaced by the data passed in the rendered index.html
-    domain: 'humm-au-sandbox.au.auth0.com',
-    clientID: '9XCRGeQeqzrxft8A3xnUCTEqhODl9cM0',
-    redirectUri: 'http://localhost:4200/Success',
-    state: '',
-    audience: '',
-    responseType: 'code',
-    scope: 'openid profile email'
   },
   otp: {
     length: 6,

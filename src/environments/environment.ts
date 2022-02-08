@@ -6,7 +6,6 @@ import { Environment, Country } from './interfaces';
 
 export const environment: Environment = {
   production: false,
-  hostDomain: 'localhost:4200',
   countryCode: '61',
   defaultCountry: Country.AU,
   root: '',

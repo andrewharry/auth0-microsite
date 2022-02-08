@@ -10,6 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body class="mat-typography mat-app-background">
+  <script>
+    var auth0Config = {};
+
+    try {
+      auth0Config = JSON.parse(
+        decodeURIComponent(escape(window.atob('@@config@@')))
+      );
+    } catch (e) {
+      console.info('Auth0 config placeholder missing!')
+    }
+    window.auth0Config = auth0Config;
+  </script>
   <app-root></app-root>
 </body>
 </html>
