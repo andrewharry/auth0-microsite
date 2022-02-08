@@ -20,6 +20,7 @@ export class SuccessComponent implements OnInit {
   profile!: Auth0UserProfile;
 
   ngOnInit(): Promise<void> {
+    debugger
     const params = this.parseParms(this.route.snapshot.fragment);
 
     return this.auth.getUserInfo(params['access_token']).then(v => {
