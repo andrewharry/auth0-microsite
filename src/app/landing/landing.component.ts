@@ -11,7 +11,6 @@ import { SnackBarService } from '../services/snack-bar.service';
 export class LandingComponent {
   public requestInProgress: boolean = false;
   public form!: FormGroup;
-  public title = "Let's get you signed in."
 
   constructor(private fb: FormBuilder, private authService: AuthService, private snackbar: SnackBarService) {
     this.form =  this.fb.group({});

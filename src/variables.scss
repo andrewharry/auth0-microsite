@@ -1,0 +1,8 @@
+// HummPro
+$app-primary-color: #ff6c00;
+$app-primary-color-light: rgba(#ff6c00, 0.5);
+$app-primary-color-dark: darken(#ff6c00, 50%);
+
+$app-text-color: #414141;
+$app-text-color-light: lighten($app-text-color, 50%);
+$app-text-color-dark: darken($app-text-color, 50%);

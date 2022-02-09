@@ -1,15 +1,14 @@
-import { Environment, Country } from './interfaces';
+import { Environment, Country, Product } from './interfaces';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment: Environment = {
-  version: '1.0.1',
+  product: Product.HummCA,
+  version: '1.0.2',  
   production: false,
   root: '',
-  countryCode: '61',
-  defaultCountry: Country.AU,
   countries: {
     AU: {
       phoneCode: '+61',
@@ -20,6 +19,10 @@ export const environment: Environment = {
       phoneCode: '+64',
       phoneDisplayMask: 'XX XXXX XXXX',
       phonePattern: /^0?2\d{7,9}$/,
+    },   
+    CA: {
+      phoneCode: '+1',
+      phoneDisplayMask: 'XXX XXX XXXX',
     },
   },
   auth0: {

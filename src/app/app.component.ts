@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SetupService } from './services/setup.service';
 import { environment } from 'src/environments/environment';
+import { Product } from 'src/environments/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
     return environment.version ?? null;
   }
 
-  get country(): string | null {
-    return environment.countryCode ?? null;
+  get product(): Product | null {
+    return environment.product ?? null;
   }
 }

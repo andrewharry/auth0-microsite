@@ -1,5 +1,7 @@
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="{{product}}">
+  <div class="container">
+    <router-outlet></router-outlet>
 
-  <small style="position: absolute;bottom: 10px;">version: {{version}} ({{country}})</small>
+    <small style="position:absolute;bottom:10px;left:10px">version: {{version}} ({{product}})</small>
+  </div>
 </div>

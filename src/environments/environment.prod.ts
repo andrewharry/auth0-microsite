@@ -1,11 +1,10 @@
-import { Environment, Country } from './interfaces';
+import { Environment, Product } from './interfaces';
 
 export const environment: Environment = {
-  version: '1.0.1',
+  product: Product.Default, // '#{ product-code }#'
+  version: '1.0.2',
   production: true,
   root: 'https://andrewharry.github.io/auth0-microsite',
-  countryCode: '61', // '#{ idp-country-code }#',,
-  defaultCountry: Country.AU,
   countries: {
     AU: {
       phoneCode: '+61',
@@ -16,6 +15,10 @@ export const environment: Environment = {
       phoneCode: '+64',
       phoneDisplayMask: 'XX XXXX XXXX',
       phonePattern: /^0?2\d{7,9}$/,
+    },    
+    CA: {
+      phoneCode: '+1',
+      phoneDisplayMask: 'XXX XXX XXXX',
     },
   },
   otp: {

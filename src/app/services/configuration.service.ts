@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Environment, CountryConfiguration, Country, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
 import { environment } from '../../environments/environment';
-import { AuthOptions } from 'auth0-js';
-
-const DEFAULT_COUNTRY = environment.countryCode as Country;
 
 declare global {
   interface Window {
@@ -20,30 +17,12 @@ export type Auth0ExtraParams = {
 })
 export class ConfigurationService {
 
-  private appCountryCode = DEFAULT_COUNTRY;
-
-  get countryCode(): Country {
-    return this.appCountryCode;
-  }
-
   get cfg(): Environment {
     return environment;
   }
 
-  get country(): CountryConfiguration {
-    return environment.countries[this.appCountryCode];
-  }
-
   get isProduction(): boolean {
     return environment.production;
-  }
-
-  get phoneCode(): string {
-    return this.country.phoneCode;
-  }
-
-  get phoneNumberMask(): string {
-    return this.country.phoneDisplayMask;
   }
 
   get passwordConfig(): PasswordConfig {
@@ -68,9 +47,5 @@ export class ConfigurationService {
       redirectUri: windowConfig?.callbackURL ?? this.cfg.auth0?.redirectUri,
       state: windowConfig?.internalOptions?.state ?? this.cfg.auth0?.state
     };
-  }
-
-  getCountryCfgByCode(code: Country): CountryConfiguration {
-    return environment.countries[code];
   }
 }
