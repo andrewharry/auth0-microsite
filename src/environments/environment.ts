@@ -7,9 +7,9 @@ import { Environment, Country } from './interfaces';
 export const environment: Environment = {
   version: '1.0.1',
   production: false,
+  root: '',
   countryCode: '61',
   defaultCountry: Country.AU,
-  root: '',
   countries: {
     AU: {
       phoneCode: '+61',
