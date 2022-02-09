@@ -85,31 +85,39 @@ export class AuthService {
 
   async loginUser(username: string, password: string): Promise<void> {
     return new Promise(async (resolve, reject) => {
-      this.initializeClient();
+      try {
+        this.initializeClient();
 
-      this.auth0Client.login({
-        password,
-        username,
-        redirectUri: this.cfg.auth0Config.redirectUri,
-        audience: this.cfg.auth0Config.audience,
-        realm: 'User-Pass-Auth-Auth0-DB',
-        responseType: 'code'
-      }, (err, res) => {
-        err ? reject(err) : resolve(res);
-      });
+        this.auth0Client.login({
+          password,
+          username,
+          redirectUri: this.cfg.auth0Config.redirectUri,
+          audience: this.cfg.auth0Config.audience,
+          realm: 'User-Pass-Auth-Auth0-DB',
+          responseType: 'code'
+        }, (err, res) => {
+          err ? reject(err) : resolve(res);
+        });
+      } catch (err) {
+        reject(err);
+      }
     });
   }
 
   async forgotPassword(email: string): Promise<void> {
     return new Promise(async (resolve, reject) => {
-      this.initializeClient();
+      try {
+        this.initializeClient();
 
-      this.auth0Client.changePassword({
-        email: email,
-        connection: 'User-Pass-Auth-Auth0-DB'
-      }, (err, res) => {
-        err ? reject(err) : resolve(res);
-      });
+        this.auth0Client.changePassword({
+          email: email,
+          connection: 'User-Pass-Auth-Auth0-DB'
+        }, (err, res) => {
+          err ? reject(err) : resolve(res);
+        });
+      } catch (err) {
+        reject(err);
+      }
     });
   }
 
