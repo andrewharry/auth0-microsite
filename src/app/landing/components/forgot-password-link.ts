@@ -5,7 +5,8 @@ import Routes from '../../routes';
 
 @Component({
   selector: 'forgot-password-link',
-  template: `<a href="" (click)="onClick($event)">{{'ForgotPassword_Link' | resource}}</a>`
+  template: `<button type="button" mat-button disableRipple color="secondary" class="forgot-password-btn" (click)="onClick($event)">{{'ForgotPassword_Link' | resource}}</button>`,
+  styleUrls: ['./forgot-password-link.scss']
 })
 export class ForgotPasswordLink  { 
   @Input() form!: FormGroup;

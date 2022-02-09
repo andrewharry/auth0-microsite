@@ -3,11 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'username-input',
-  templateUrl: './username-input.component.html',
-  styles: [
-    `:host { display:block; }`, 
-    `mat-form-field { width: 100%; }`
-  ]
+  templateUrl: './username-input.component.html'
 })
 export class UsernameInputComponent implements OnInit {
 

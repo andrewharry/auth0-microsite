@@ -1,4 +1,4 @@
-<main>
+<main class="page">
   <header innerHTML="{{'LandingPage_Title' | resource}}"></header>
   <form name="landing" [formGroup]="form" (ngSubmit)="onSubmit()">
     <username-input name="username" [form]="form"></username-input>
@@ -6,7 +6,7 @@
     <forgot-password-link [form]="form"></forgot-password-link>
   </form>
   <footer>
-    <button class="humm-button" mat-flat-button type="submit" form="landing" [disabled]="requestInProgress">{{'LandingPage_SubmitButton' | resource}}</button>
-    <button class="register-button" mat-flat-button type="button">{{'LandingPage_RegisterButton' | resource}}</button>
+    <button class="btn-large submit-button" mat-flat-button type="submit" form="landing" [disabled]="requestInProgress">{{'LandingPage_SubmitButton' | resource}}</button>
+    <button class="btn-large register-button" mat-flat-button type="button">{{'LandingPage_RegisterButton' | resource}}</button>
   </footer>
 </main>

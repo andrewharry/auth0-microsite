@@ -5,11 +5,7 @@ type passwordType = 'password' | 'text';
 
 @Component({
   selector: 'password-input',
-  templateUrl: './password-input.component.html',
-  styles: [
-    `:host { display:block; }`, 
-    `mat-form-field { width: 100%; }`
-  ]
+  templateUrl: './password-input.component.html'
 })
 export class PasswordInputComponent implements OnInit { 
   private minLength = 8;  

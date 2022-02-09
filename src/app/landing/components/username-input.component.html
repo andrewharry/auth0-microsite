@@ -1,9 +1,8 @@
-<mat-form-field appearance="standard" [formGroup]="form">
-    <mat-label>{{'Username_Label' | resource}}</mat-label>
+<mat-form-field appearance="fill" [formGroup]="form">    
     <input matInput
         inputmode="email"
         name="username"
-        placeholder=""
+        placeholder="{{'Username_Label' | resource}}"
         formControlName="username"/>
     <mat-error *ngIf="control.invalid">
         {{errors}}
