@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private setup: SetupService) {}
 
   ngOnInit(): void {
-    console.info(JSON.stringify(environment));
+    console.info(environment);
   }
 
   get version(): string | null {
