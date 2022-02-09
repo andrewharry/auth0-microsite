@@ -17,7 +17,7 @@ export class LandingComponent {
     this.form =  this.fb.group({});
   }
 
-  async submitted() : Promise<void> {
+  async onSubmit() : Promise<void> {
     this.form.markAllAsTouched();
 
     if (this.form.invalid) {

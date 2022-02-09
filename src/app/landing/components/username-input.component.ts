@@ -17,6 +17,9 @@ export class UsernameInputComponent implements OnInit {
   ngOnInit(): void {
     if (this.form) {
       this.form.addControl('username', this.control);
+
+      const { username } = history.state || {};
+      this.control.setValue(username);
     }
   }
 

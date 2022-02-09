@@ -6,9 +6,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import Route from './routes';
 
 const routes: Routes = [
-  { path: Route.Login, component: LandingComponent },
+  { path: Route.Landing, component: LandingComponent },
   { path: Route.ForgotPassword, component: ForgotPasswordComponent },
-  { path: '', redirectTo: `/${Route.Login}`, pathMatch: 'full' }
+  { path: '', redirectTo: `/${Route.Landing}`, pathMatch: 'full' }
 ];
 
 @NgModule({

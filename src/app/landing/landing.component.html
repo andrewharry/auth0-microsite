@@ -2,11 +2,11 @@
   <header>
     <h1>{{title}}</h1>
   </header>
-  <form [formGroup]="form" (ngSubmit)="submitted()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <username-input name="username" [form]="form" ></username-input><br/>
     <password-input name="password" [form]="form" ></password-input><br/><br/>
     
-    <button class="humm-button" mat-flat-button color="primary" type="submit">Submit</button>
+    <button class="humm-button" mat-flat-button color="primary" type="submit" [disabled]="requestInProgress">Submit</button>
     <forgot-password-link [form]="form"></forgot-password-link>
   </form>
 </main>
