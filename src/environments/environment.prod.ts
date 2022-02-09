@@ -3,7 +3,7 @@ import { Environment, Country } from './interfaces';
 export const environment: Environment = {
   production: true,
   root: 'https://andrewharry.github.io/auth0-microsite',
-  countryCode: '#{ idp-country-code }#',
+  //countryCode: '#{ idp-country-code }#',
   defaultCountry: Country.AU,
   countries: {
     AU: {

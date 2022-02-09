@@ -42,7 +42,8 @@ import { AuthOptions } from 'auth0-js';
   };
   
   export type Configuration = {
-    countryCode: string,
+    version?: string,
+    countryCode?: string,
     defaultCountry: Country,
     root: string,
     countries: {

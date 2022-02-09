@@ -5,6 +5,7 @@ import { Environment, Country } from './interfaces';
 // The list of file replacements can be found in `angular.json`.
 
 export const environment: Environment = {
+  version: '1.0.1',
   production: false,
   countryCode: '61',
   defaultCountry: Country.AU,
