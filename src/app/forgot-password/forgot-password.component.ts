@@ -24,7 +24,7 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     let { username } = history.state || {};
 
-    if (username.indexOf('@') == -1) {
+    if (username && username.indexOf('@') == -1) {
       username = '';
     }
 
