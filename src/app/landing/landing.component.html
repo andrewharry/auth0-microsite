@@ -1,6 +1,6 @@
 <main>
   <header innerHTML="{{'LandingPage_Title' | resource}}"></header>
-  <form name="landing" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form class="mat-form-large" name="landing" [formGroup]="form" (ngSubmit)="onSubmit()">
     <username-input name="username" [form]="form"></username-input>
     <password-input name="password" [form]="form"></password-input>  
     <forgot-password-link [form]="form"></forgot-password-link>
