@@ -8,7 +8,7 @@
   box-sizing: border-box;
   --body-text-color: hsl(0, 0%, 20%);
   --app-primary-color: #ff6c00;
-  --content-padding: 10px;
+  --content-padding: 16px;
   font-size: 16px;
 }
 
@@ -44,7 +44,6 @@ h6 {
 h1 {
   display: block;
   width: 100%;
-  //margin: 0 !important;
   font-size: 2.5rem !important;
   line-height: 1.2em !important;
   font-weight: bolder !important;
@@ -57,13 +56,10 @@ main {
   gap: 1em;
   height: 100vh;
   width: auto;
-  align-items: center;
-  justify-content: center;
 
   > header {
     display: grid;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
   }
 
   form {
@@ -86,38 +82,39 @@ main {
   }
 }
 
+// NOTE: Styling is specific for when the form field appearance is set to *standard*
 .mat-form-large mat-form-field {
   //Everything scales based on the font-size
   font-size: 1.5em;
-  & .mat-form-field-flex {
-    padding-top: 0;
-  }
 
-  & .mat-form-field-wrapper {
-    padding-bottom: 1.5em;
-  }
+  &.mat-form-field-appearance-fill {
 
-  & .mat-form-field-subscript-wrapper {
-    margin-top: 0.3em;
-  }
-  
-  & .mat-form-field-underline { display: none; }
+    & .mat-form-field-flex {
+      padding-top: 0;
+    }
 
-  & .mat-icon-button { 
-    width: 2em !important; 
-    height: 2em !important; 
-    position: relative;
-    top: 0.3em;
-  }
+    & .mat-form-field-wrapper {
+      padding-bottom: 1.5em;
+    }
 
-  & .mat-form-field-infix {
-    padding-top: 0;
+    & .mat-form-field-subscript-wrapper {
+      margin-top: 0.3em;
+    }
+    
+    & .mat-form-field-underline { display: none; }
+
+    & .mat-icon-button { 
+      width: 2em !important; 
+      height: 2em !important; 
+      position: relative;
+      top: 0.3em;
+    }
+
+    & .mat-form-field-infix {
+      padding-top: 0;
+    }
   }
 }
-
-//mat-label {
-//  font-size: 18px;
-//}
 
 username-input, password-input {
   display: block;
@@ -177,13 +174,35 @@ $btn-large-height: 60px;
   font-weight: 400;
 }
 
-.forgot-password-btn {
-  font-size: 14px;
-  margin-top: 10px;
-  color: var(--app-primary-color);
-  font-weight: 600;
-  border: 0;
-  background: 0;
+forgot-password-link {
   width: 100%;
   text-align: center;
+  display: block;
+  & .forgot-password-btn {
+    font-size: 14px;
+    margin: 10px auto;
+    color: var(--app-primary-color);
+    font-weight: 600;
+    border: 0;
+    background: 0;
+    text-align: center;
+  }
+}
+
+.instructions-block {
+  width: 75%;
+  margin: 1em auto;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: transparent;
 }

@@ -1,6 +1,6 @@
 import { Environment, Product } from './interfaces';
 
-export const environment: Environment = {
+export var environment: Environment = {
   product: Product.HummCA, // '#{ product-code }#'
   version: '1.0.2',
   production: true,

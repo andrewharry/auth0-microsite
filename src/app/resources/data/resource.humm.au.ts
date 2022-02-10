@@ -13,7 +13,7 @@ var resources : IResources = {
     ForgotPage_SubTitle: null,
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
-    FormField_Appearance: 'outline',
+    FormField_Appearance: 'standard',
     ShowLabels: "true"
 };
 

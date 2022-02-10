@@ -1,11 +1,11 @@
-import { Environment, Country, Product } from './interfaces';
+import { Environment, Product } from './interfaces';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment: Environment = {
-  product: Product.HummCA,
+export var environment: Environment = {
+  product: Product.HummAU,
   version: '1.0.2',  
   production: false,
   root: '',
