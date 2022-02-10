@@ -42,7 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
     try 
     {
       await this.authService.forgotPassword(this.form.value['username']);
-      this.snackbar.open("Check your email for the link!");
+      await this.snackbar.openWithPromise("Check your email for the link!", 'close', { duration: 5000 });
       this.router.navigate([Routes.Landing], {
         state: { username: this.form.value['username'] },
       });

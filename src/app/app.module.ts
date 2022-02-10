@@ -20,6 +20,7 @@ import { SetupService } from './services/setup.service';
 import { AuthService } from './services/auth.service';
 import { SnackBarService } from './services/snack-bar.service';
 
+import { DirectivesModule } from './directives/directives.module';
 import { ResourceModule } from './resources/resource.module';
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ResourceModule } from './resources/resource.module';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    ResourceModule 
+    ResourceModule,
+    DirectivesModule
   ],
   providers: [SetupService, AuthService, SnackBarService],
   bootstrap: [AppComponent]
