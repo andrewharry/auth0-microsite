@@ -10,6 +10,7 @@
   --app-primary-color: #ff6c00;
   --content-padding: 16px;
   font-size: 16px;
+  line-height: 1.2;
 }
 
 *,
@@ -28,6 +29,11 @@ html, body, app-root, .container, .container > .ng-star-inserted {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mat-body, .mat-body-1, .mat-typography {
+  font-size: 1rem;
+}
+
+//Padding for Angular Components i.e. app-landing, app-forgot-password
 .container > .ng-star-inserted { padding: 0 var(--content-padding); }
 
 header,
@@ -45,7 +51,7 @@ h1 {
   display: block;
   width: 100%;
   font-size: 2.5rem !important;
-  line-height: 1.2em !important;
+  line-height: 1.2 !important;
   font-weight: bolder !important;
 }
 
@@ -72,7 +78,7 @@ main {
 
     .footer-link {
       font-size: 1rem;
-      margin-top: 18px;
+      margin-top: 1em;
 
       a, a:visited, a:focus, a:hover, a:active {
         color: var(--app-primary-color);
@@ -85,7 +91,7 @@ main {
 // NOTE: Styling is specific for when the form field appearance is set to *standard*
 .mat-form-large mat-form-field {
   //Everything scales based on the font-size
-  font-size: 1.5em;
+  font-size: 1.35rem;
 
   &.mat-form-field-appearance-fill {
 
@@ -144,7 +150,7 @@ $btn-large-height: 60px;
 .mat-button.mat-button {
   border-radius: 200px;
   font-size: 1.25rem;
-  line-height: 1.25rem;
+  //line-height: 1.25;
   height: 60px;
 
   &.mat-secondary {
@@ -170,23 +176,15 @@ $btn-large-height: 60px;
   }
 }
 
-.mat-simple-snackbar {
-  font-weight: 400;
-}
-
-forgot-password-link {
-  width: 100%;
-  text-align: center;
-  display: block;
-  & .forgot-password-btn {
-    font-size: 14px;
-    margin: 10px auto;
+.btn-link {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    margin: 1em auto;
     color: var(--app-primary-color);
     font-weight: 600;
     border: 0;
-    background: 0;
-    text-align: center;
-  }
+    text-decoration: none;
 }
 
 .instructions-block {
