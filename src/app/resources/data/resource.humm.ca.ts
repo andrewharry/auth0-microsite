@@ -12,7 +12,9 @@ var resources : IResources = {
     ForgotPage_Title: `Reset your<br />password`,
     ForgotPage_SubTitle: `<p>Enter the email or mobile number for your account.</p><p>A reset password link will be sent to your email address.</p>`,
     ForgotPage_SubmitButton: null,
-    ForgotPassword_Link: null
+    ForgotPassword_Link: null,
+    FormField_Appearance: null,
+    ShowLabels: "false"
 };
 
 export default resources;

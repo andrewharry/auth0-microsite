@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ResourceFactory } from '../../resources/resource.factory';
 
 type passwordType = 'password' | 'text';
 
@@ -9,9 +10,14 @@ type passwordType = 'password' | 'text';
 })
 export class PasswordInputComponent implements OnInit { 
   private minLength = 8;  
+  showLabels: boolean = false;
   @Input() form!: FormGroup;
   control: FormControl = new FormControl('', Validators.compose([Validators.required, Validators.minLength(this.minLength)]));
   inputType: passwordType = 'password';
+
+  constructor(resourceFactory: ResourceFactory) {
+    this.showLabels = resourceFactory.GetResource('ShowLabels') == 'true';
+  }
 
   get showPassword(): boolean {
     return this.inputType === 'password';

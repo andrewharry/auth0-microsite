@@ -5,7 +5,7 @@ import { Environment, Country, Product } from './interfaces';
 // The list of file replacements can be found in `angular.json`.
 
 export const environment: Environment = {
-  product: Product.HummCA,
+  product: Product.HummAU,
   version: '1.0.2',  
   production: false,
   root: '',

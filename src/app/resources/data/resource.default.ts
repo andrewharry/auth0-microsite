@@ -12,7 +12,9 @@ var resources : IResources = {
     ForgotPage_Title: 'Change your Password.',
     ForgotPage_SubTitle: 'To securely reset your password we\'ll send a code to your mobile.',
     ForgotPage_SubmitButton: 'Send code',
-    ForgotPassword_Link: 'Forgot password?'
+    ForgotPassword_Link: 'Forgot password?',
+    FormField_Appearance: 'fill',    
+    ShowLabels: "false"
 };
 
 export default resources;

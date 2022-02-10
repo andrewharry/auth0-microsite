@@ -1,18 +1,33 @@
 @import '~normalize.css';
-@import './variables';
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+// Global fix for box sizing
+:root {
+  box-sizing: border-box;
+  --body-text-color: hsl(0, 0%, 20%);
+  --app-primary-color: #ff6c00;
+  --content-padding: 10px;
+}
 
-// Generic
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
 
-html, body {
-  height: 100%;
-  color: $app-text-color;
+html, body, app-root, .container, .container > .ng-star-inserted {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  color: var(--body-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.container > .ng-star-inserted { padding: 0 var(--content-padding); }
 
 header,
 h1,
@@ -21,51 +36,52 @@ h3,
 h4,
 h5,
 h6 {
-  color: #414141;
+  color: var(--body-text-color);
   text-align: center;
 }
 
-header h1 {
-  margin: 0 !important;
+h1 {
+  display: block;
+  width: 100%;
+  //margin: 0 !important;
   font-size: 35px !important;
   line-height: 40px !important;
   font-weight: bolder !important;
 }
 
-strong {
-  font-family: 'Proxima Nova Altbold';
-}
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1em;
+  height: 100vh;
+  width: auto;
+  align-items: center;
+  justify-content: center;
 
-.full-width {
-  width: 100%;
-}
-
-.instructions-block {
-  width: 266px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 18px;
-
-  > p:not(:first-child) {
-    margin-top: 20px;
+  > header {
+    display: grid;
+    align-items: center;
+    justify-content: center;
   }
-}
 
-// Buttons
-.mat-button.mat-button {
-  &.mat-primary {
-    color: #ffffff;
-    background: $app-primary-color;
+  form {
+    height: auto;
+  }
 
-    &.mat-button-disabled {
-      color: #ffffff;
-      background-color: $app-primary-color-light;
+  footer {
+    text-align: center;
+    box-sizing: border-box;
+
+    .footer-link {
+      font-size: 1rem;
+      margin-top: 18px;
+
+      a, a:visited, a:focus, a:hover, a:active {
+        color: var(--app-primary-color);
+        text-decoration: none;
+      }
     }
-  }
-
-  &.mat-secondary {
-    background-color: #ffffff;
-    color: $app-primary-color;
   }
 }
 
@@ -76,6 +92,7 @@ mat-label {
 username-input, password-input {
   display: block;
   width: 100%;
+
   mat-form-field {
     width: 100%;
   }
@@ -90,128 +107,9 @@ $btn-large-height: 60px;
   line-height: $btn-large-height;
   font-size: $btn-large-height / 3;
 
-  &.submit-button {
+  &.btn-primary {
     color: white;
-    background-color: $app-primary-color;
-  }
-}
-
-.mat-input-element {
-  font-size: 18px !important;
-}
-
-$mat-input-padding: 10px;
-
-.mat-form-field-subscript-wrapper {
-    margin-top: 0 !important;
-    margin-left: $mat-input-padding + 5px !important;
-    padding-left: 0 !important;
-}
-
-// Inputs
-.mat-form-field {
-    margin-bottom: 12px;
-  input.mat-input-element {
-    color: #485465;
-    &::placeholder {
-      color: #485465;
-    }
-  }
-
-  .errors {
-    color: red;
-    font-size: 0.75rem;
-  }
-
-  &.mat-form-field-appearance-fill {
-    background-color: #f1f2ee;
-    border-radius: 8px;
-  }
-
-  .mat-form-field-wrapper {
-    padding: $mat-input-padding 0;
-
-    .mat-form-field-flex {
-      align-items: center;
-      background-color: unset;
-      padding: $mat-input-padding $mat-input-padding + 5px;
-
-      .mat-form-field-infix {
-        border-top: 0;
-        padding: 0;
-      }
-
-      .mat-form-field-suffix {
-        margin-top: 0;
-
-        button {
-          width: 24px;
-          height: 24px;
-          background: transparent;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        mat-icon {
-          width: 100%;
-          height: 100%;
-          svg {
-            display: block;
-          }
-        }
-      }
-    }
-  }
-
-  .mat-form-field-underline,
-  .mat-form-field-ripple {
-    display: none;
-  }
-}
-
-// Layout
-.page {
-  > header {
-    flex: none;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media(max-height: 670px) {
-      height: 240px;
-    }
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: auto;
-    height: 208px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    box-sizing: border-box;
-
-    @media(max-height: 670px) {
-      height: auto;
-      margin-top: 0;
-      flex: 1;
-    }
-
-    .footer-link {
-      font-size: 1rem;
-      margin-top: 18px;
-      a, a:visited, a:focus, a:hover, a:active {
-        color: $app-primary-color;
-        text-decoration: none;
-      }
-    }
+    background-color: var(--app-primary-color);
   }
 }
 
@@ -245,50 +143,17 @@ $mat-input-padding: 10px;
   }
 }
 
-// Layout
-.page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-
-  > section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    @media(max-height: 670px) {
-      flex: none;
-    }
-  }
-
-  > * {
-    padding: 0 16px;
-  }
-
-  > .full-width {
-    padding: 0;
-  }
-}
-
 .mat-simple-snackbar {
   font-weight: 400;
 }
 
-.mat-simple-snackbar-action button {
-  font-weight: 400;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  box-shadow: 0 0 0px 1000px transparent inset;
-  transition: background-color 5000s ease-in-out 0s;
-}
-input:-webkit-autofill::first-line {
-  font-size: 19px;
-  font-family: 'Proxima Nova';
+.forgot-password-btn {
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(--app-primary-color);
+  font-weight: 600;
+  border: 0;
+  background: 0;
+  width: 100%;
+  text-align: center;
 }

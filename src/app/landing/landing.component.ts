@@ -5,8 +5,7 @@ import { SnackBarService } from '../services/snack-bar.service';
 
 @Component({
   selector: 'app-landing',
-  templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  templateUrl: './landing.component.html'
 })
 export class LandingComponent {
   public requestInProgress: boolean = false;

@@ -12,7 +12,9 @@ var resources : IResources = {
     ForgotPage_Title: null,
     ForgotPage_SubTitle: null,
     ForgotPage_SubmitButton: null,
-    ForgotPassword_Link: null
+    ForgotPassword_Link: null,
+    FormField_Appearance: 'outline',
+    ShowLabels: "true"
 };
 
 export default resources;
