@@ -10,19 +10,24 @@ import { AppComponent } from './app.component';
 
 import { MatIconModule } from "@angular/material/icon";
 import { MaterialModule } from './common/material.module';
-import { LandingComponent } from './pages/landing/landing.component';
+
+// Common Components
+import { NavbarComponent } from './common/components/navbar.component';
 import { PasswordInputComponent } from './common/components/password-input.component';
 import { UsernameInputComponent } from './common/components/username-input.component';
-
 import { ForgotPasswordLink } from './common/components/forgot-password-link';
+import { DirectivesModule } from './common/directives/directives.module';
+import { ResourceModule } from './resources/resource.module';
+
+// Pages
+import { LandingComponent } from './pages/landing/landing.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
+//Services
 import { SetupService } from './services/setup.service';
 import { AuthService } from './services/auth.service';
 import { SnackBarService } from './services/snack-bar.service';
 
-import { DirectivesModule } from './common/directives/directives.module';
-import { ResourceModule } from './resources/resource.module';
 
 declare global {
   interface Window {
@@ -32,6 +37,7 @@ declare global {
 
 @NgModule({
   declarations: [
+    NavbarComponent,
     AppComponent,
     LandingComponent,
     PasswordInputComponent,

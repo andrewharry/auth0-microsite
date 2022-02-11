@@ -15,8 +15,8 @@ export class PasswordInputComponent implements OnInit {
   control: FormControl = new FormControl('', Validators.compose([Validators.required, Validators.minLength(this.minLength)]));
   inputType: passwordType = 'password';
 
-  constructor(resourceFactory: ResourceFactory) {
-    this.showLabels = resourceFactory.GetResource('ShowLabels') == 'true';
+  constructor(resources: ResourceFactory) {
+    this.showLabels = resources.IsEnabled('Display_Labels');
   }
 
   get showPassword(): boolean {

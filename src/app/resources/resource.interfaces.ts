@@ -15,13 +15,14 @@ export interface IResources {
 
     FormField_Appearance: string | null;
 
-    ShowLabels: 'true' | 'false';
+    Display_Navbar: 'true' | 'false' | null;
+    Display_Labels: 'true' | 'false' | null;
 
     Theme_PrimaryColor: string | null;
     Theme_AccentColor: string | null;
     Theme_WarnColor: string | null;
 }
 
-export type ResourceKeys = 'LandingPage_Title' | 'LandingPage_SubmitButton';
 
+export type EnableKeys = 'Display_Navbar' | 'Display_Labels';
 export type ThemeKeys = 'Theme_PrimaryColor' | 'Theme_AccentColor' | 'Theme_WarnColor';

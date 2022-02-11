@@ -11,8 +11,8 @@ export class UsernameInputComponent implements OnInit {
   @Input() form!: FormGroup;
   control: FormControl = new FormControl('', Validators.compose([Validators.required]));
 
-  constructor(resourceFactory: ResourceFactory) {
-    this.showLabels = resourceFactory.GetResource('ShowLabels') == 'true';
+  constructor(resources: ResourceFactory) {
+    this.showLabels = resources.IsEnabled('Display_Labels');
   }
 
   ngOnInit(): void {

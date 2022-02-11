@@ -14,10 +14,11 @@ var resources : IResources = {
     ForgotPage_SubmitButton: 'Send code',
     ForgotPassword_Link: 'Forgot password?',
     FormField_Appearance: 'fill',
-    ShowLabels: "false",
     Theme_PrimaryColor: '#ff6c00',
     Theme_AccentColor: '#ff9b3f',
-    Theme_WarnColor: '#f57c00'
+    Theme_WarnColor: '#f57c00',
+    Display_Navbar: 'false',
+    Display_Labels: 'false'
 };
 
 export default resources;

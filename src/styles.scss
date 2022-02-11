@@ -13,7 +13,6 @@ $mat-css-light-theme-selector: '.isLightTheme';
   // @include your-custom-component-theme($mat-css-theme);
 };
 
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -24,10 +23,13 @@ $mat-css-light-theme-selector: '.isLightTheme';
   --color-primary: #ff6c00; /* any format you want here */
   --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%)); 
   --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
-  --content-padding: 16px;
   font-size: 16px;
   line-height: 1.2;
 }
+
+$main-padding-neg: -16px;
+$main-padding-px: 16px;
+$navbar-height: 3em;
 
 *,
 ::before,
@@ -35,22 +37,22 @@ $mat-css-light-theme-selector: '.isLightTheme';
   box-sizing: inherit;
 }
 
-html, body, app-root, .container, .container > .ng-star-inserted {
+html, body, app-root, .container {
   display: block;
   height: 100vh;
   width: 100%;
   margin: 0;
-  //color: var(--body-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container > .ng-star-inserted {
+  display: contents;
 }
 
 .mat-body, .mat-body-1, .mat-typography {
   font-size: 1rem;
 }
-
-//Padding for Angular Components i.e. app-landing, app-forgot-password
-.container > .ng-star-inserted { padding: 0 var(--content-padding); }
 
 header,
 h1,
@@ -86,24 +88,36 @@ h1 {
   font-weight: bolder !important;
 }
 
+navbar {
+  display: block;
+  margin: 0;
+  height: $navbar-height;
+  background-color: var(--color-primary);
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 1em;
-  height: 100vh;
+  margin: 0 $main-padding-px;  
   width: auto;
+  height: 100vh;
 
-  > header {
-    display: grid;
-    align-items: center;
+  .navbar & {
+    height: calc(100vh - $navbar-height);
   }
 
-  > form {
+  header {
+    display: grid;
+    align-items: center;    
+  }
+
+  form {
     height: auto;
   }
 
-  > footer {
+  footer {
     text-align: center;
     display: flex;
     flex-direction: column;

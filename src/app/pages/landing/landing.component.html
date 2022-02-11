@@ -1,5 +1,7 @@
 <main>
-  <header innerHTML="{{'LandingPage_Title' | resource}}"></header>
+  <header>
+    <div innerHTML="{{'LandingPage_Title' | resource}}"></div>
+  </header>
   <form id="landing" class="mat-form-large" [formGroup]="form" (ngSubmit)="onSubmit()">
     <username-input name="username" [form]="form"></username-input>
     <password-input name="password" [form]="form"></password-input>  

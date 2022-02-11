@@ -11,6 +11,9 @@ export class ThemeService {
         material.setPrimaryColor(primary);
         this.setCustomVariable('--color-primary', primary);
 
+        if (!resources.IsEnabled('Display_Navbar'))
+            this.setCustomVariable('--navbar-height', 0);
+
         material.setAccentColor(resources.GetByTheme('Theme_AccentColor'));
         material.setWarnColor(resources.GetByTheme('Theme_WarnColor'));
         material.setAutoContrastEnabled(true);
@@ -18,7 +21,7 @@ export class ThemeService {
         material.setDarkTheme(false);
     }
 
-    setCustomVariable(variable: string, value: string) {
+    setCustomVariable(variable: string, value: any) {
         const body = document.getElementsByTagName("body")[0];
         body.style.setProperty(variable, value);
     }

@@ -3,6 +3,7 @@ import { SetupService } from './services/setup.service';
 import { ThemeService } from './services/theme.service';
 import { environment } from 'src/environments/environment';
 import { Product } from 'src/environments/interfaces';
+import { ResourceFactory } from './resources/resource.factory';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,14 @@ import { Product } from 'src/environments/interfaces';
 })
 export class AppComponent implements OnInit {
 
+  navbar: string;
+  showNavbar: boolean = false;
+
   /*services are injected to ensure the singleton constructor executes*/
-  constructor(theme: ThemeService, setup: SetupService) { }
+  constructor(resources: ResourceFactory, theme: ThemeService, setup: SetupService){
+      this.showNavbar = resources.IsEnabled('Display_Navbar');
+      this.navbar = this.showNavbar ? 'navbar' : '';
+  }
 
   ngOnInit(): void {
     console.info(environment);
