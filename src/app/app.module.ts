@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
@@ -23,6 +24,12 @@ import { SnackBarService } from './services/snack-bar.service';
 import { DirectivesModule } from './directives/directives.module';
 import { ResourceModule } from './resources/resource.module';
 
+declare global {
+  interface Window {
+    _app_base: any;
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +51,7 @@ import { ResourceModule } from './resources/resource.module';
     ResourceModule,
     DirectivesModule
   ],
-  providers: [SetupService, AuthService, SnackBarService],
+  providers: [SetupService, AuthService, SnackBarService, {provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

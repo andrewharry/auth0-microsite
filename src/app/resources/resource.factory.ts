@@ -5,7 +5,7 @@ import ResourceDefault from './data/resource.default';
 import BundllAu from './data/resource.bundll.au';
 import HummAu from './data/resource.humm.au';
 import HummCa from './data/resource.humm.ca';
-import { IResources } from './resource.interfaces';
+import { IResources, ThemeKeys } from './resource.interfaces';
 
 @Injectable({
     providedIn: 'root'
@@ -26,7 +26,11 @@ export class ResourceFactory {
         catch { return ""; }
     }
 
-    private GetByProduct(): IResources {
+    public GetByTheme(key: ThemeKeys): string {
+        return this.GetResource(key);
+    }
+
+    public GetByProduct(): IResources {
         switch (environment.product) {
             case Product.BundllAU : return BundllAu;
             case Product.HummAU: return HummAu;
@@ -35,7 +39,7 @@ export class ResourceFactory {
         }
     }
 
-    private GetDefault(): IResources {
+    public GetDefault(): IResources {
          return ResourceDefault;
     }
 }

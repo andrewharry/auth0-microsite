@@ -1,4 +1,18 @@
-@import '~normalize.css';
+//@import '~normalize.css';
+
+@import '~angular-material-css-vars/src/lib/main';
+
+// optional
+$mat-css-dark-theme-selector: '.isDarkTheme';
+$mat-css-light-theme-selector: '.isLightTheme';
+
+// init theme
+@include init-material-css-vars() {
+  // If your app has any theme mixins, call them here. 
+  // $mat-css-theme gets set to an appropriate value before this content is called.
+  // @include your-custom-component-theme($mat-css-theme);
+};
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -7,7 +21,9 @@
 :root {
   box-sizing: border-box;
   --body-text-color: hsl(0, 0%, 20%);
-  --app-primary-color: #ff6c00;
+  --color-primary: #ff6c00; /* any format you want here */
+  --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%)); 
+  --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
   --content-padding: 16px;
   font-size: 16px;
   line-height: 1.2;
@@ -24,7 +40,7 @@ html, body, app-root, .container, .container > .ng-star-inserted {
   height: 100vh;
   width: 100%;
   margin: 0;
-  color: var(--body-text-color);
+  //color: var(--body-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,6 +61,21 @@ h5,
 h6 {
   color: var(--body-text-color);
   text-align: center;
+}
+
+body.isDarkTheme {
+  background-color: #272727; 
+  header,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-primary);
+  }
+  a > .mat-button-wrapper { color: #666; }
+  p { color: #666; }
 }
 
 h1 {
@@ -132,18 +163,17 @@ $btn-large-height: 60px;
   height: $btn-large-height;
   line-height: $btn-large-height;
   font-size: $btn-large-height / 3;
+}
 
-  &.btn-primary {
-    color: white;
-    background-color: var(--app-primary-color);
-  }
+.btn-large + .btn-large {
+  //applies to second button
+  margin-top: 1em;
 }
 
 // Buttons
 .mat-button.mat-button {
   border-radius: 200px;
   font-size: 1.25rem;
-  //line-height: 1.25;
   height: 60px;
 
   &.mat-secondary {
@@ -169,12 +199,11 @@ $btn-large-height: 60px;
   }
 }
 
-.btn-link {
+.btn-center {
     display: block;
     width: fit-content;
     text-align: center;
     margin: 1em auto;
-    color: var(--app-primary-color);
     font-weight: 600;
     border: 0;
     text-decoration: none;

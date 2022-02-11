@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SetupService } from './services/setup.service';
+import { ThemeService } from './services/theme.service';
 import { environment } from 'src/environments/environment';
 import { Product } from 'src/environments/interfaces';
 
@@ -8,10 +9,9 @@ import { Product } from 'src/environments/interfaces';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  title = 'Learning';
 
-  /*setup is injected to ensure the singleton constructor executes*/
-  constructor(private setup: SetupService) {}
+  /*services are injected to ensure the singleton constructor executes*/
+  constructor(theme: ThemeService, setup: SetupService) { }
 
   ngOnInit(): void {
     console.info(environment);

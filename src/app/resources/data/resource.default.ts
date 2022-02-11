@@ -13,8 +13,11 @@ var resources : IResources = {
     ForgotPage_SubTitle: 'To securely reset your password we’ll send a code to your mobile.',
     ForgotPage_SubmitButton: 'Send code',
     ForgotPassword_Link: 'Forgot password?',
-    FormField_Appearance: 'fill',    
-    ShowLabels: "false"
+    FormField_Appearance: 'fill',
+    ShowLabels: "false",
+    Theme_PrimaryColor: '#ff6c00',
+    Theme_AccentColor: '#ff9b3f',
+    Theme_WarnColor: '#f57c00'
 };
 
 export default resources;

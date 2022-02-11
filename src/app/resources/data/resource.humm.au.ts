@@ -14,7 +14,10 @@ var resources : IResources = {
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
     FormField_Appearance: 'standard',
-    ShowLabels: "true"
+    ShowLabels: "true",
+    Theme_PrimaryColor: null,
+    Theme_AccentColor: null,
+    Theme_WarnColor: null
 };
 
 export default resources;

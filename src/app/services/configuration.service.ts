@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Environment, CountryConfiguration, Country, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
+import { Environment, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
 import { environment } from '../../environments/environment';
 
 declare global {
