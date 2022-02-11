@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { SnackBarService } from '../services/snack-bar.service';
-import Routes from '../routes';
+import { AuthService } from '../../services/auth.service';
+import { SnackBarService } from '../../services/snack-bar.service';
+import Routes from '../../routes';
 
 @Component({
   selector: 'app-forgot-password',
