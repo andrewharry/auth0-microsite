@@ -1,7 +1,7 @@
 import { Environment, Product } from './interfaces';
 
 export var environment: Environment = {
-  product: Product.HummAU, // '#{ product-code }#'
+  product: Product.HummCA, // '#{ product-code }#'
   version: '1.0.2',
   production: true,
   root: 'https://andrewharry.github.io/auth0-microsite',

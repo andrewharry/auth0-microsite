@@ -112,6 +112,10 @@ main {
   }
 }
 
+.bundll-au header {
+  border-top: var(--color-primary-darker) 20px solid;
+}
+
 // NOTE: Styling is specific for when the form field appearance is set to *standard*
 .mat-form-large mat-form-field {
   //Everything scales based on the font-size

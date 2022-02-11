@@ -15,7 +15,7 @@ export class ThemeService {
         material.setWarnColor(resources.GetByTheme('Theme_WarnColor'));
         material.setAutoContrastEnabled(true);
         material.setAlternativeColorAlgorithm(true);
-        material.setDarkTheme(true);
+        material.setDarkTheme(false);
     }
 
     setCustomVariable(variable: string, value: string) {
