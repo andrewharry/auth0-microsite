@@ -14,10 +14,12 @@ var resources : IResources = {
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
     FormField_Appearance: 'standard',
+    Theme_CustomCss: 'humm-au',
     Theme_PrimaryColor: null,
     Theme_AccentColor: null,
     Theme_WarnColor: null,
-    Display_Navbar: 'true',
+    Navbar_Enabled: 'true',
+    Navbar_Mode: 'desktop',
     Display_Labels: 'true'
 };
 

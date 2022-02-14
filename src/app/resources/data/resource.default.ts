@@ -4,7 +4,7 @@ import { IResources } from "../resource.interfaces";
  * Defines default values.  If the Country or Product doesn't wish to override they can leave it null
  */
 var resources : IResources = {
-    LandingPage_Title: '<h1>Let’s get you<br/>signed in.</h1>',
+    LandingPage_Title: '<h1>Let’s get you<br class="mobile-only"> signed in.</h1>',
     LandingPage_SubmitButton: 'Sign In',
     LandingPage_RegisterButton: 'New to humm? Sign up',
     Username_Label: 'Email or mobile number',
@@ -14,10 +14,12 @@ var resources : IResources = {
     ForgotPage_SubmitButton: 'Send code',
     ForgotPassword_Link: 'Forgot password?',
     FormField_Appearance: 'fill',
+    Theme_CustomCss: null,
     Theme_PrimaryColor: '#ff6c00',
     Theme_AccentColor: '#ff9b3f',
     Theme_WarnColor: '#f57c00',
-    Display_Navbar: 'false',
+    Navbar_Enabled: null,
+    Navbar_Mode: null,
     Display_Labels: 'false'
 };
 

@@ -15,14 +15,16 @@ export interface IResources {
 
     FormField_Appearance: string | null;
 
-    Display_Navbar: 'true' | 'false' | null;
+    Navbar_Enabled: 'true' | 'false' | null;
+    Navbar_Mode: NavbarModes | null;
     Display_Labels: 'true' | 'false' | null;
 
+    Theme_CustomCss: string | null;
     Theme_PrimaryColor: string | null;
     Theme_AccentColor: string | null;
     Theme_WarnColor: string | null;
 }
 
-
-export type EnableKeys = 'Display_Navbar' | 'Display_Labels';
-export type ThemeKeys = 'Theme_PrimaryColor' | 'Theme_AccentColor' | 'Theme_WarnColor';
+export type NavbarModes = 'mobile' | 'desktop';
+export type EnableKeys = 'Navbar_Enabled' | 'Display_Labels';
+export type ThemeKeys = 'Theme_CustomCss' | 'Theme_PrimaryColor' | 'Theme_AccentColor' | 'Theme_WarnColor';

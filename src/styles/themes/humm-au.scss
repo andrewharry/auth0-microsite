@@ -1,0 +1,32 @@
+/* Theme overrides for humm AU */
+
+@import "../variables.scss";
+
+html,
+body,
+app-root {
+  @media #{$xsmall-and-up} {
+    background-color: #f1f2ee;
+  }
+}
+
+navbar {
+  background-color: #fff;
+}
+
+@media #{$small-and-up} {
+  :root {
+    font-size: 12px;
+  }
+  main {
+    grid-template-rows: auto auto auto;
+  }
+  main header {
+    justify-content: flex-end;
+    margin-top: 5em;
+  }
+
+  main footer {
+    justify-content: flex-start;
+  }
+}

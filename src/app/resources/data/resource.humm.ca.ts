@@ -14,11 +14,13 @@ var resources : IResources = {
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
     FormField_Appearance: null,
+    Theme_CustomCss: null,
     Theme_PrimaryColor: null,
     Theme_AccentColor: null,
     Theme_WarnColor: null,
-    Display_Navbar: null,
-    Display_Labels: 'false'
+    Navbar_Enabled: null,
+    Navbar_Mode: null,
+    Display_Labels: 'false'    
 };
 
 export default resources;

@@ -1,0 +1,44 @@
+@import '~normalize.css';
+
+@import '~angular-material-css-vars/src/lib/main';
+
+// optional
+$mat-css-dark-theme-selector: '.isDarkTheme';
+$mat-css-light-theme-selector: '.isLightTheme';
+
+// init theme
+@include init-material-css-vars() {
+  // If your app has any theme mixins, call them here. 
+  // $mat-css-theme gets set to an appropriate value before this content is called.
+  // @include your-custom-component-theme($mat-css-theme);
+};
+
+// Material design normalisation
+
+// global box model fix
+:root {
+    box-sizing: border-box;
+}
+
+*, ::before,  ::after {
+    box-sizing: inherit;
+}
+
+// set relative ems to be based on 16px;
+:root {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: transparent;
+}

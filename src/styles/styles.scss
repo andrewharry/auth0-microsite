@@ -1,56 +1,59 @@
-//@import '~normalize.css';
+@import "./variables.scss";
+@import "./material.scss";
 
-@import '~angular-material-css-vars/src/lib/main';
-
-// optional
-$mat-css-dark-theme-selector: '.isDarkTheme';
-$mat-css-light-theme-selector: '.isLightTheme';
-
-// init theme
-@include init-material-css-vars() {
-  // If your app has any theme mixins, call them here. 
-  // $mat-css-theme gets set to an appropriate value before this content is called.
-  // @include your-custom-component-theme($mat-css-theme);
-};
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-// Global fix for box sizing
+// Global variables
 :root {
-  box-sizing: border-box;
   --body-text-color: hsl(0, 0%, 20%);
   --color-primary: #ff6c00; /* any format you want here */
-  --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%)); 
+  --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%));
   --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
-  font-size: 16px;
-  line-height: 1.2;
 }
 
 $main-padding-neg: -16px;
 $main-padding-px: 16px;
-$navbar-height: 3em;
+$navbar-height: 5em;
 
-*,
-::before,
-::after {
-  box-sizing: inherit;
-}
-
-html, body, app-root, .container {
+html,
+body,
+app-root {
   display: block;
+  margin: 0;
   height: 100vh;
   width: 100%;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  display: block;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media #{$xsmall-and-down} {
+    height: 100vh;
+    width: 100%;
+
+    &.navbar-mobile {
+      height: calc(100vh - $navbar-height);
+    }
+  }
+
+  @media #{$xsmall-and-up} {
+    height: auto;
+    margin: 0 auto;
+    max-width: $xsmall-screen-up;
+  }
+}
+
 .container > .ng-star-inserted {
+  // effectively removes the page level component from the DOM.  i.e. <app-forgot-password>
   display: contents;
 }
 
-.mat-body, .mat-body-1, .mat-typography {
+.mat-body,
+.mat-body-1,
+.mat-typography {
   font-size: 1rem;
 }
 
@@ -66,7 +69,7 @@ h6 {
 }
 
 body.isDarkTheme {
-  background-color: #272727; 
+  background-color: #272727;
   header,
   h1,
   h2,
@@ -76,8 +79,12 @@ body.isDarkTheme {
   h6 {
     color: var(--color-primary);
   }
-  a > .mat-button-wrapper { color: #666; }
-  p { color: #666; }
+  a > .mat-button-wrapper {
+    color: #666;
+  }
+  p {
+    color: #666;
+  }
 }
 
 h1 {
@@ -89,10 +96,23 @@ h1 {
 }
 
 navbar {
-  display: block;
+  display: none;
   margin: 0;
   height: $navbar-height;
   background-color: var(--color-primary);
+  text-align: center;
+}
+
+navbar.navbar-desktop {
+  @media #{$xsmall-and-up} {
+    display: block;
+  }
+}
+
+navbar.navbar-mobile {
+  @media #{$xsmall-and-down} {
+    display: block;
+  }
 }
 
 main {
@@ -100,17 +120,19 @@ main {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 1em;
-  margin: 0 $main-padding-px;  
+  margin: 0 $main-padding-px;
   width: auto;
-  height: 100vh;
+  height: 100%;
 
-  .navbar & {
-    height: calc(100vh - $navbar-height);
+  @media #{$xsmall-and-up} {
+    height: auto;
   }
 
   header {
-    display: grid;
-    align-items: center;    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   form {
@@ -126,17 +148,12 @@ main {
   }
 }
 
-.bundll-au header {
-  border-top: var(--color-primary-darker) 20px solid;
-}
-
 // NOTE: Styling is specific for when the form field appearance is set to *standard*
 .mat-form-large mat-form-field {
   //Everything scales based on the font-size
   font-size: 1.3rem;
 
   &.mat-form-field-appearance-fill {
-
     & .mat-form-field-flex {
       padding-top: 0;
     }
@@ -148,12 +165,14 @@ main {
     & .mat-form-field-subscript-wrapper {
       margin-top: 0.3em;
     }
-    
-    & .mat-form-field-underline { display: none; }
 
-    & .mat-icon-button { 
-      width: 2em !important; 
-      height: 2em !important; 
+    & .mat-form-field-underline {
+      display: none;
+    }
+
+    & .mat-icon-button {
+      width: 2em !important;
+      height: 2em !important;
       position: relative;
       top: 0.3em;
     }
@@ -164,7 +183,8 @@ main {
   }
 }
 
-username-input, password-input {
+username-input,
+password-input {
   display: block;
   width: 100%;
 
@@ -218,13 +238,13 @@ $btn-large-height: 60px;
 }
 
 .btn-center {
-    display: block;
-    width: fit-content;
-    text-align: center;
-    margin: 1em auto;
-    font-weight: 600;
-    border: 0;
-    text-decoration: none;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  margin: 1em auto;
+  font-weight: 600;
+  border: 0;
+  text-decoration: none;
 }
 
 .instructions-block {
@@ -232,15 +252,9 @@ $btn-large-height: 60px;
   margin: 1em auto;
 }
 
-/* Change Autocomplete styles in Chrome*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  background-color: transparent;
+br.mobile-only {
+  display: none;
+  @media #{$xsmall-and-down} {
+    display: inline;
+  }
 }

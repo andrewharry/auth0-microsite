@@ -27,6 +27,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { SetupService } from './services/setup.service';
 import { AuthService } from './services/auth.service';
 import { SnackBarService } from './services/snack-bar.service';
+import { NavbarService } from './services/navbar.service';
+import { ThemeService } from './services/theme.service';
 
 
 declare global {
@@ -57,7 +59,18 @@ declare global {
     ResourceModule,
     DirectivesModule
   ],
-  providers: [SetupService, AuthService, SnackBarService, {provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'}],
+  providers: [
+    SetupService, 
+    AuthService, 
+    SnackBarService, 
+    NavbarService, 
+    {
+      provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  /*services are injected to ensure the singleton constructor executes*/
+  constructor(theme: ThemeService, setup: SetupService) { }
+ }

@@ -31,7 +31,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss",
+              {
+                "input": "src/styles/themes/humm-au.scss",
+                "bundleName": "humm-au",
+                "inject": false
+              },
+              {
+                "input": "src/styles/themes/bundll.scss",
+                "bundleName": "bundll",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -101,7 +111,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
