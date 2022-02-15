@@ -6,7 +6,7 @@ import { Environment, Product } from './interfaces';
 
 export var environment: Environment = {
   product: Product.HummAU,
-  version: '1.0.2',  
+  version: '1.0.3',  
   production: false,
   root: '',
   countries: {
