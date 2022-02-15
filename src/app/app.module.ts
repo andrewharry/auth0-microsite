@@ -24,12 +24,13 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 //Services
-import { SetupService } from './services/setup.service';
 import { AuthService } from './services/auth.service';
-import { SnackBarService } from './services/snack-bar.service';
+import { DeviceWidthService } from './services/device-width.service';
 import { NavbarService } from './services/navbar.service';
+import { SetupService } from './services/setup.service';
+import { SnackBarService } from './services/snack-bar.service';
 import { ThemeService } from './services/theme.service';
-
+import { UsernameInputService } from './services/username-input.service';
 
 declare global {
   interface Window {
@@ -60,10 +61,12 @@ declare global {
     DirectivesModule
   ],
   providers: [
-    SetupService, 
     AuthService, 
-    SnackBarService, 
+    DeviceWidthService,
     NavbarService, 
+    SetupService,     
+    SnackBarService, 
+    UsernameInputService,    
     {
       provide: APP_BASE_HREF, useValue: window['_app_base'] || '/'
     }

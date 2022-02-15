@@ -10,7 +10,9 @@ export interface IResources {
     
     Username_Mode: UsernameModes | null;
     Display_Labels: 'true' | 'false' | null;
-    Username_Label: string | null;
+    Mobile_Label: string | null;
+    MobileOrEmail_Label: string | null;
+    Email_Label: string | null;
     Password_Label: string | null;
     FormField_Appearance: string | null;
 
@@ -26,7 +28,7 @@ export interface IResources {
     Theme_BodyTextColor: string | null;
 }
 
-export type UsernameModes = 'mobile_only' | 'mobile_only_on_native' | 'email_only' | 'mobile_or_email'| 'mobile_or_email_on_desktop';
+export type UsernameModes = 'mobile_only' | 'email_only' | 'mobile_or_email'| 'mobile_only_on_native';
 export type NavbarModes = 'mobile' | 'desktop' | 'both';
 export type EnableKeys = 'Navbar_Enabled' | 'Display_Labels';
 export type ThemeKeys = 'Theme_CustomCss' | 'Theme_PrimaryColor' | 'Theme_AccentColor' | 'Theme_WarnColor' | 'Theme_BodyTextColor';

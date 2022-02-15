@@ -13,8 +13,10 @@ var resources : IResources = {
 
     Username_Mode: null,
     Display_Labels: 'true',
-    Username_Label: 'Email address',    
-    Password_Label: null,    
+    Mobile_Label: null,
+    MobileOrEmail_Label: null,
+    Email_Label: 'Email address',
+    Password_Label: null,
     FormField_Appearance: null,
 
     ForgotPage_Title: null,
@@ -25,7 +27,7 @@ var resources : IResources = {
     Theme_CustomCss: 'bundll',
     Theme_PrimaryColor: '#e0fa1d',
     Theme_AccentColor: '#ededed',
-    Theme_WarnColor: null,    
+    Theme_WarnColor: null,
     Theme_BodyTextColor: null
 };
 

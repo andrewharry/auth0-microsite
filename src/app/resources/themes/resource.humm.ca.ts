@@ -4,8 +4,8 @@ import { IResources } from "../resource.interfaces";
  * Overrides default values for Humm AU
  */
 var resources : IResources = {
-    Navbar_Enabled: 'true',
-    Navbar_Mode: 'both',
+    Navbar_Enabled: null,
+    Navbar_Mode: null,
 
     LandingPage_Title: null,
     LandingPage_SubmitButton: null,
@@ -13,20 +13,22 @@ var resources : IResources = {
 
     Username_Mode: null,
     Display_Labels: 'true',
-    Username_Label: null,
+    Mobile_Label: null,
+    MobileOrEmail_Label: null,
+    Email_Label: null,
     Password_Label: null,
-    FormField_Appearance: 'standard',
+    FormField_Appearance: null,
 
-    ForgotPage_Title: null,
-    ForgotPage_SubTitle: null,
+    ForgotPage_Title: `Reset your<br />password`,
+    ForgotPage_SubTitle: `<p>Enter the email or mobile number for your account.</p><p>A reset password link will be sent to your email address.</p>`,
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
-    
-    Theme_CustomCss: 'humm-au',
+
+    Theme_CustomCss: null,
     Theme_PrimaryColor: null,
-    Theme_AccentColor: '#ffffff',
+    Theme_AccentColor: null,
     Theme_WarnColor: null,
-    Theme_BodyTextColor: '#555555'
+    Theme_BodyTextColor: null
 };
 
 export default resources;

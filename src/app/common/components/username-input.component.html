@@ -1,9 +1,9 @@
 <mat-form-field [appearance]="'FormField_Appearance' | resource" [formGroup]="form">    
-    <mat-label *ngIf="showLabels">{{'Username_Label' | resource}}</mat-label>
+    <mat-label *ngIf="input.showLabels">{{input.label}}</mat-label>
     <input matInput
-        inputmode="email"
+        [type]="input.type"
         name="username" 
-        placeholder="{{'Username_Label' | resource}}"
+        placeholder="{{input.label}}"
         formControlName="username"/>
     <mat-error *ngIf="control.invalid">
         {{errors}}

@@ -11,15 +11,17 @@ var resources : IResources = {
     LandingPage_SubmitButton: 'Sign In',
     LandingPage_RegisterButton: 'New to humm? Sign up',
 
-    Username_Mode: null,
+    Username_Mode: 'mobile_or_email',
     Display_Labels: 'false',
-    Username_Label: 'Email or mobile number',
+    Mobile_Label: 'Mobile',
+    MobileOrEmail_Label: 'Email or mobile number',
+    Email_Label: 'Email',
     Password_Label: 'Password',
     FormField_Appearance: 'fill',
 
     ForgotPage_Title: 'Change your Password.',
     ForgotPage_SubTitle: 'To securely reset your password we’ll send a code to your mobile.',
-    ForgotPage_SubmitButton: 'Send code',    
+    ForgotPage_SubmitButton: 'Send code',
     ForgotPassword_Link: 'Forgot password?',
 
     Theme_CustomCss: null,

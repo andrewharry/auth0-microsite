@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../environments/interfaces';
 import { environment } from '../../environments/environment';
-import ResourceDefault from './products/resource.default';
-import BundllAu from './products/resource.bundll.au';
-import HummAu from './products/resource.humm.au';
-import HummCa from './products/resource.humm.ca';
+import ResourceDefault from './themes/resource.default';
+import BundllAu from './themes/resource.bundll.au';
+import HummAu from './themes/resource.humm.au';
+import HummCa from './themes/resource.humm.ca';
 import { IResources, ThemeKeys, EnableKeys } from './resource.interfaces';
 
 @Injectable({

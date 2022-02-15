@@ -1,19 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ResourceFactory } from 'src/app/resources/resource.factory';
+import { UsernameInputService } from '../../services/username-input.service';
 
 @Component({
   selector: 'username-input',
   templateUrl: './username-input.component.html'
 })
 export class UsernameInputComponent implements OnInit {
-  showLabels: boolean = false;
   @Input() form!: FormGroup;
   control: FormControl = new FormControl('', Validators.compose([Validators.required]));
 
-  constructor(resources: ResourceFactory) {
-    this.showLabels = resources.IsEnabled('Display_Labels');
-  }
+  constructor(public input: UsernameInputService) { }
 
   ngOnInit(): void {
     if (this.form) {
