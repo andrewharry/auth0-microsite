@@ -21,6 +21,16 @@ export var environment: Environment = {
       phoneDisplayMask: 'XXX XXX XXXX',
     },
   },
+  auth0: {
+    // these two get replaced by the data passed in the rendered index.html
+    domain: 'humm-au-sandbox.au.auth0.com',
+    clientID: '9XCRGeQeqzrxft8A3xnUCTEqhODl9cM0',
+    redirectUri: '',
+    state: '',
+    audience: '',
+    responseType: 'code',  
+    scope: 'openid profile email'
+  },
   otp: {
     length: 6,
     allowNumbersOnly: true,

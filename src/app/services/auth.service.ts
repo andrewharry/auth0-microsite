@@ -83,9 +83,10 @@ export class AuthService {
     });
   }
 
-  async loginUser(username: string, password: string): Promise<void> {
-    return new Promise(async (resolve, reject) => {
+  loginUser(username: string, password: string): Promise<void> {
+    return new Promise((resolve, reject) => {
       try {
+
         this.initializeClient();
 
         this.auth0Client.login({
@@ -104,8 +105,8 @@ export class AuthService {
     });
   }
 
-  async forgotPassword(email: string): Promise<void> {
-    return new Promise(async (resolve, reject) => {
+  forgotPassword(email: string): Promise<void> {
+    return new Promise((resolve, reject) => {
       try {
         this.initializeClient();
 
@@ -122,11 +123,11 @@ export class AuthService {
   }
 
   private initializeClient(options?: Partial<AuthOptions>): void {
-    const auth0Options: AuthOptions = {...this.cfg.auth0Config, ...options};
-    if (!auth0Options.domain) {
-      return; // to prevent the need of hardcoded values
+    try {
+      const auth0Options: AuthOptions = {...this.cfg.auth0Config, ...options}; 
+      this.auth0Client = new WebAuth(auth0Options);
+    } catch (err) {
+      console.error(err);
     }
-
-    this.auth0Client = new WebAuth(auth0Options);
   }
 }
