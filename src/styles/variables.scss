@@ -30,3 +30,24 @@ $xsmall-and-down: "only screen and (max-width : #{$xsmall-screen})" !default;
 $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Global variables
+:root {
+    --body-text-color: #333333;
+    --color-primary: #ff6c00; /* any format you want here */
+    --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%));
+    --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
+  
+    --btn-large-height: 2.5em;
+    --btn-large-radius: 2.5em;
+    --btn-large-font-size: 1.3rem;
+  
+    --navbar-height: 4.5em;
+  
+    @media #{$small-and-up} {
+      --navbar-height: 5.5em;
+    }
+  }
+  
+  $main-padding-neg: -16px;
+  $main-padding-px: 16px;

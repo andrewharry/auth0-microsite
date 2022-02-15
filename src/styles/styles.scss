@@ -1,17 +1,6 @@
-@import "./variables.scss";
 @import "./material.scss";
-
-// Global variables
-:root {
-  --body-text-color: hsl(0, 0%, 20%);
-  --color-primary: #ff6c00; /* any format you want here */
-  --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%));
-  --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
-}
-
-$main-padding-neg: -16px;
-$main-padding-px: 16px;
-$navbar-height: 5em;
+@import "./variables.scss";
+@import "./fonts/proxima-nova";
 
 html,
 body,
@@ -35,7 +24,7 @@ app-root {
     width: 100%;
 
     &.navbar-mobile {
-      height: calc(100vh - $navbar-height);
+      height: calc(100vh - var(--navbar-height));
     }
   }
 
@@ -54,7 +43,7 @@ app-root {
 .mat-body,
 .mat-body-1,
 .mat-typography {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 header,
@@ -87,20 +76,31 @@ body.isDarkTheme {
   }
 }
 
-h1 {
+.container h1 {
+  font-family: 'Proxima Nova Th' !important;
   display: block;
   width: 100%;
-  font-size: 2.2rem !important;
+  font-size: 2.5rem !important;
   line-height: 1.2 !important;
   font-weight: bolder !important;
+  letter-spacing: -1px;
 }
 
 navbar {
   display: none;
   margin: 0;
-  height: $navbar-height;
+  height: var(--navbar-height);
   background-color: var(--color-primary);
   text-align: center;
+  background-image: url('../assets/images/humm-logo.svg');
+  background-repeat: no-repeat;
+  background-size: 7em;
+  background-position: 80% 50%;
+
+  @media #{$small-and-up} {
+    background-size: 9em;
+    background-position: 50% 50%;
+  }
 }
 
 navbar.navbar-desktop {
@@ -193,36 +193,17 @@ password-input {
   }
 }
 
-$btn-large-height: 60px;
-
 .btn-large {
   width: 100%;
-  border-radius: $btn-large-height !important;
-  height: $btn-large-height;
-  line-height: $btn-large-height;
-  font-size: $btn-large-height / 3;
+  border-radius: var(--btn-large-radius) !important;
+  height: var(--btn-large-height) !important;
+  line-height: var(--btn-large-height) !important;
+  font-size: var(--btn-large-font-size) !important;
 }
 
 .btn-large + .btn-large {
   //applies to second button
   margin-top: 1em;
-}
-
-// Buttons
-.mat-button.mat-button {
-  border-radius: 200px;
-  font-size: 1.25rem;
-  height: 60px;
-
-  &.mat-secondary {
-    .mat-button-focus-overlay {
-      display: none;
-    }
-  }
-
-  &.mat-full-width {
-    width: 100%;
-  }
 }
 
 // Loading spinner on buttons
@@ -242,7 +223,6 @@ $btn-large-height: 60px;
   width: fit-content;
   text-align: center;
   margin: 1em auto;
-  font-weight: 600;
   border: 0;
   text-decoration: none;
 }

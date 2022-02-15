@@ -17,6 +17,7 @@ export class ThemeService {
 
         material.setAccentColor(resources.GetByTheme('Theme_AccentColor'));
         material.setWarnColor(resources.GetByTheme('Theme_WarnColor'));
+        this.setCssVariable('--body-text-color', resources.GetByTheme('Theme_BodyTextColor'));
         material.setAutoContrastEnabled(false);
         material.setAlternativeColorAlgorithm(true);
         material.setDarkTheme(false);

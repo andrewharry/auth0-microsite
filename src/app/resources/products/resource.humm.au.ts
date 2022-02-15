@@ -4,23 +4,29 @@ import { IResources } from "../resource.interfaces";
  * Overrides default values for Humm AU
  */
 var resources : IResources = {
+    Navbar_Enabled: 'true',
+    Navbar_Mode: 'both',
+
     LandingPage_Title: null,
     LandingPage_SubmitButton: null,
     LandingPage_RegisterButton: null,
+
+    Username_Mode: null,
+    Display_Labels: 'true',
     Username_Label: null,
     Password_Label: null,
+    FormField_Appearance: 'standard',
+
     ForgotPage_Title: null,
     ForgotPage_SubTitle: null,
     ForgotPage_SubmitButton: null,
     ForgotPassword_Link: null,
-    FormField_Appearance: 'standard',
+    
     Theme_CustomCss: 'humm-au',
     Theme_PrimaryColor: null,
-    Theme_AccentColor: null,
+    Theme_AccentColor: '#ffffff',
     Theme_WarnColor: null,
-    Navbar_Enabled: 'true',
-    Navbar_Mode: 'desktop',
-    Display_Labels: 'true'
+    Theme_BodyTextColor: '#555555'
 };
 
 export default resources;

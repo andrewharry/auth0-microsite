@@ -6,6 +6,5 @@ import { ResourceFactory } from '../../resources/resource.factory';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent  { 
-
-
+  //TODO: Need to add dynamic back button
 }

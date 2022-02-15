@@ -2,10 +2,12 @@
     <mat-label *ngIf="showLabels">{{'Username_Label' | resource}}</mat-label>
     <input matInput
         inputmode="email"
-        name="username"
+        name="username" 
         placeholder="{{'Username_Label' | resource}}"
         formControlName="username"/>
     <mat-error *ngIf="control.invalid">
         {{errors}}
     </mat-error>
 </mat-form-field>
+
+<!-- Need different labels according to the Username_Mode -->

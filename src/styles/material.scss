@@ -30,6 +30,10 @@ $mat-css-light-theme-selector: '.isLightTheme';
     line-height: 1.2;
 }
 
+.mat-button, .mat-body, .mat-body-1, .mat-typography {
+  font-size: inherit; 
+}
+
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 

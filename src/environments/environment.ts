@@ -5,7 +5,7 @@ import { Environment, Product } from './interfaces';
 // The list of file replacements can be found in `angular.json`.
 
 export var environment: Environment = {
-  product: Product.BundllAU,
+  product: Product.HummAU,
   version: '1.0.2',  
   production: false,
   root: '',
