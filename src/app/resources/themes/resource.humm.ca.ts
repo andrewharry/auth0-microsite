@@ -12,7 +12,7 @@ var resources : IResources = {
     LandingPage_RegisterButton: null,
 
     Username_Mode: null,
-    Display_Labels: 'true',
+    Display_Labels: 'false',
     Mobile_Label: null,
     MobileOrEmail_Label: null,
     Email_Label: null,

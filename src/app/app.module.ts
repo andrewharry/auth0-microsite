@@ -27,7 +27,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { AuthService } from './services/auth.service';
 import { DeviceWidthService } from './services/device-width.service';
 import { NavbarService } from './services/navbar.service';
-import { SetupService } from './services/setup.service';
+import { IconService } from './services/icon.service';
 import { SnackBarService } from './services/snack-bar.service';
 import { ThemeService } from './services/theme.service';
 import { UsernameInputService } from './services/username-input.service';
@@ -64,7 +64,7 @@ declare global {
     AuthService, 
     DeviceWidthService,
     NavbarService, 
-    SetupService,     
+    IconService,     
     SnackBarService, 
     UsernameInputService,    
     {
@@ -75,5 +75,5 @@ declare global {
 })
 export class AppModule {
   /*services are injected to ensure the singleton constructor executes*/
-  constructor(theme: ThemeService, setup: SetupService) { }
+  constructor(theme: ThemeService, setup: IconService) { }
  }

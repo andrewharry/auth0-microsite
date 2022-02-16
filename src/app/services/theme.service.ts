@@ -1,7 +1,8 @@
-import { Component, Injectable, Inject, Renderer2 } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MaterialCssVarsService } from 'angular-material-css-vars';
 import { ResourceFactory } from '../resources/resource.factory';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
@@ -25,7 +26,7 @@ export class ThemeService {
         let themeCss = resources.GetByTheme('Theme_CustomCss');
 
         if (themeCss) {
-            this.loadTheme(`${themeCss}.css`);
+            this.loadTheme(`${environment.root}/${themeCss}.css`);
         }
     }
 

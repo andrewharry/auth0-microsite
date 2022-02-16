@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Environment } from 'src/environments/interfaces';
 import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
-export class SetupService {
+export class IconService {
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     console.info('Registering Custom SVG Icons');

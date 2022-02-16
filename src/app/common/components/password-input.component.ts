@@ -11,12 +11,16 @@ type passwordType = 'password' | 'text';
 export class PasswordInputComponent implements OnInit { 
   private minLength = 8;  
   showLabels: boolean = false;
+  label: string = '';
+  placeholder: string = '';
   @Input() form!: FormGroup;
   control: FormControl = new FormControl('', Validators.compose([Validators.required, Validators.minLength(this.minLength)]));
   inputType: passwordType = 'password';
 
   constructor(resources: ResourceFactory) {
     this.showLabels = resources.IsEnabled('Display_Labels');
+    this.label = resources.GetResource('Password_Label');
+    this.placeholder = !this.showLabels ? this.label : '';
   }
 
   get showPassword(): boolean {

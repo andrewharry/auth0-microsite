@@ -3,7 +3,7 @@
     <input matInput
         [type]="input.type"
         name="username" 
-        placeholder="{{input.label}}"
+        placeholder="{{!input.showLabels ? input.label : ''}}"
         formControlName="username"/>
     <mat-error *ngIf="control.invalid">
         {{errors}}

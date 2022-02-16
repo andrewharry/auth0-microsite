@@ -5,7 +5,7 @@ import { IResources } from "../resource.interfaces";
  */
 var resources : IResources = {
     Navbar_Enabled: 'true',
-    Navbar_Mode: 'both',
+    Navbar_Mode: 'desktop',
 
     LandingPage_Title: null,
     LandingPage_SubmitButton: null,
