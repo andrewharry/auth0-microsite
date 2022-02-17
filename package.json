@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --output-path docs --base-href /auth0-microsite/ --deploy-url https://andrewharry.github.io/auth0-microsite/"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,9 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@types/auth0-js": "^9.14.5",
+    "angular-material-css-vars": "^3.0.0",
     "auth0-js": "^9.19.0",
+    "normalize.css": "^8.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

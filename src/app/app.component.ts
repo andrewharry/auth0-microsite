@@ -1,14 +1,25 @@
-import { Component } from '@angular/core';
-import { SetupService } from './services/setup.service';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { Product } from 'src/environments/interfaces';
+import { NavbarService } from './services/navbar.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'Learning';
+export class AppComponent implements OnInit {
 
-  /*setup is injected to ensure the singleton constructor executes*/
-  constructor(private setup: SetupService) {}
+  constructor(public navbar: NavbarService){ }
+
+  ngOnInit(): void {
+    console.info(environment);
+  }
+
+  get version(): string | null {
+    return environment.version ?? null;
+  }
+
+  get product(): Product | null {
+    return environment.product ?? null;
+  }
 }

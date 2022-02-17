@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { environment, Environment, CountryConfiguration, Country, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/environment';
+import { Environment, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
+import { environment } from '../../environments/environment';
 
-const DEFAULT_COUNTRY = environment.countryCode as Country;
+declare global {
+  interface Window {
+    auth0Config: any;
+  }
+}
 
 export type Auth0ExtraParams = {
   isSignUp?: string // stringified boolean
@@ -12,34 +17,12 @@ export type Auth0ExtraParams = {
 })
 export class ConfigurationService {
 
-  private appCountryCode = DEFAULT_COUNTRY;
-
-  get countryCode(): Country {
-    return this.appCountryCode;
-  }
-
   get cfg(): Environment {
     return environment;
   }
 
-  get country(): CountryConfiguration {
-    return environment.countries[this.appCountryCode];
-  }
-
-  get hostDomain(): string {
-    return environment.hostDomain;
-  }
-
   get isProduction(): boolean {
     return environment.production;
-  }
-
-  get phoneCode(): string {
-    return this.country.phoneCode;
-  }
-
-  get phoneNumberMask(): string {
-    return this.country.phoneDisplayMask;
   }
 
   get passwordConfig(): PasswordConfig {
@@ -55,10 +38,14 @@ export class ConfigurationService {
   }
 
   get auth0Config() : Auth0Config {
-    return environment.auth0;
-  }
+    const windowConfig = window.auth0Config;
 
-  getCountryCfgByCode(code: Country): CountryConfiguration {
-    return environment.countries[code];
+    return {
+      domain: windowConfig?.auth0Domain ?? this.cfg.auth0?.domain,
+      clientID: windowConfig?.clientID ?? this.cfg.auth0?.clientID,
+      audience: (windowConfig?.extraParams?.audience || windowConfig?.auth0Tenant) ?? this.cfg.auth0?.audience,
+      redirectUri: windowConfig?.callbackURL ?? this.cfg.auth0?.redirectUri,
+      state: windowConfig?.internalOptions?.state ?? this.cfg.auth0?.state
+    };
   }
 }

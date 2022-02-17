@@ -1,0 +1,1 @@
+:root{--body-text-color: #333333;--color-primary: #ff6c00;--color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%));--color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));--btn-large-height: 2.5em;--btn-large-radius: 2.5em;--btn-large-font-size: 1.3rem;--navbar-height: 4.5em}@media only screen and (min-width : 601px){:root{--navbar-height: 5.5em}}

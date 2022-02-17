@@ -83,49 +83,51 @@ export class AuthService {
     });
   }
 
-  async loginUser(username: string, password: string): Promise<void> {
-    return new Promise(async (resolve, reject) => {
-      this.initializeClient({responseType: 'token id_token', clientID: this.cfg.auth0Config.clientID});
-
-      this.auth0Client.login({
-        password,
-        username,
-        redirectUri: this.cfg.auth0Config.redirectUri,
-        audience: this.cfg.auth0Config.audience,
-        realm: 'User-Pass-Auth-Auth0-DB',
-        state: this.cfg.auth0Config.state
-      }, (err, res) => {
-        err ? reject(err) : resolve(res);
-      });
-    });
-  }
-
-  logout(clientId: string): void {
-    this.auth0Client.logout({ clientID: clientId, returnTo: "http://localhost:4200/Login" });
-  }
-
-  public initializeClient(options?: Partial<AuthOptions>): void {
-    const auth0Options: AuthOptions = {...this.cfg.auth0Config, ...options};
-    if (!auth0Options.domain) {
-      return; // to prevent the need of hardcoded values
-    }
-
-    this.auth0Client = new WebAuth(auth0Options);
-  }
-
-  getUserInfo(accessToken: string): Promise<Auth0UserProfile> {
+  loginUser(username: string, password: string): Promise<void> {
     return new Promise((resolve, reject) => {
-      // refresh the client to set the responseType correctly
-      this.initializeClient({responseType: 'token id_token', clientID: this.cfg.auth0Config.clientID});
+      try {
 
-      // get and return the user data
-      this.auth0Client.client.userInfo(accessToken, (error: null | Auth0Error, result: Auth0UserProfile) => {
-          if (error != null) {
-            reject(error);
-            return;
-          }
-          resolve(result);
-      });
+        this.initializeClient();
+
+        this.auth0Client.login({
+          password,
+          username,
+          redirectUri: this.cfg.auth0Config.redirectUri,
+          audience: this.cfg.auth0Config.audience,
+          realm: 'User-Pass-Auth-Auth0-DB',
+          responseType: 'code'
+        }, (err, res) => {
+          err ? reject(err) : resolve(res);
+        });
+      } catch (err) {
+        reject(err);
+      }
     });
+  }
+
+  forgotPassword(email: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      try {
+        this.initializeClient();
+
+        this.auth0Client.changePassword({
+          email: email,
+          connection: 'User-Pass-Auth-Auth0-DB'
+        }, (err, res) => {
+          err ? reject(err) : resolve(res);
+        });
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
+  private initializeClient(options?: Partial<AuthOptions>): void {
+    try {
+      const auth0Options: AuthOptions = {...this.cfg.auth0Config, ...options}; 
+      this.auth0Client = new WebAuth(auth0Options);
+    } catch (err) {
+      console.error(err);
+    }
   }
 }

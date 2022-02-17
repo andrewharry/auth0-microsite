@@ -1,0 +1,16 @@
+<main>
+  <header>
+    <div innerHTML="{{'LandingPage_Title' | resource}}"></div>
+  </header>
+  <form id="landing" class="mat-form-large" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <username-input name="username" [form]="form"></username-input>
+    <password-input name="password" [form]="form"></password-input>  
+    <forgot-password-link class="btn-center" [form]="form"></forgot-password-link>
+  </form>
+  <footer>
+    <button class="btn-large btn-primary" mat-button mat-flat-button color="primary" type="submit" form="landing" [disabled]="requestInProgress" [loading]="requestInProgress">
+      {{'LandingPage_SubmitButton' | resource}}
+    </button>
+    <button class="btn-large btn-secondary" mat-stroked-button color="primary" type="button">{{'LandingPage_RegisterButton' | resource}}</button>
+  </footer>
+</main>

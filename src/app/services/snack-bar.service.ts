@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig, MatSnackBarDismiss } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +36,23 @@ export class SnackBarService {
     this.snackBar.open(msg, action, {
       ...this.defaultConfig,
       ...cfg,
+    });
+  }
+
+  openWithPromise(msg: string, action = 'Ok', cfg?: MatSnackBarConfig): Promise<MatSnackBarDismiss> {
+      return new Promise((resolve, reject) => {         
+        try {
+          let handle = this.snackBar.open(msg, action, {
+            ...this.defaultConfig,
+            ...cfg,
+          });
+  
+          handle.afterDismissed().subscribe(info => {
+            resolve(info);
+          })
+        } catch (err) {
+          reject(err);
+        }
     });
   }
 

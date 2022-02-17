@@ -1,0 +1,55 @@
+/* Theme overrides for humm AU */
+@import "../variables.scss";
+
+html,
+body,
+app-root {
+  background-color: #f1f2ee;
+  color: #555;
+}
+
+navbar {
+  background-color: #fff;
+}
+
+:root {
+  --btn-large-radius: 8px;
+}
+
+navbar {
+  background-size: 7em;
+  background-position: 90% 50%;
+
+  @media #{$small-and-up} {
+    background-size: 8em;
+    background-position: 50% 50%;
+  }
+}
+
+@media #{$small-and-up} {
+  :root {
+    font-size: 14px;
+    --btn-large-height: 3em;
+    --btn-large-font-size: 1.3rem;
+  }
+  main {
+    grid-template-rows: auto auto auto;
+  }
+  main header {
+    justify-content: flex-end;
+    margin-top: 3em;
+  }
+
+  main footer {
+    justify-content: flex-start;
+  }
+}
+
+forgot-password-link .mat-button-wrapper { 
+  color: var(--color-primary);
+}
+
+.mat-stroked-button {
+  border-color: var(--color-primary) !important;
+  //border-width: 1px;
+}

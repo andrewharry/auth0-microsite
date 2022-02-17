@@ -1,0 +1,13 @@
+<mat-form-field [appearance]="'FormField_Appearance' | resource" [formGroup]="form">    
+    <mat-label *ngIf="input.showLabels">{{input.label}}</mat-label>
+    <input matInput
+        [type]="input.type"
+        name="username" 
+        placeholder="{{!input.showLabels ? input.label : ''}}"
+        formControlName="username"/>
+    <mat-error *ngIf="control.invalid">
+        {{errors}}
+    </mat-error>
+</mat-form-field>
+
+<!-- Need different labels according to the Username_Mode -->

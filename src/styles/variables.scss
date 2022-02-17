@@ -1,0 +1,53 @@
+$screen-xs:                  425px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-sm:                  601px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-md:                  993px !default;
+$screen-md-min:              $screen-md !default;
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$desktop-mode:               $screen-sm-max !default;
+
+// Media Query Ranges
+$xsmall-screen-up: 426px !default;
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$xsmall-screen: 425px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$xsmall-and-up: "only screen and (min-width : #{$xsmall-screen-up})" !default;
+$small-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$medium-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$xsmall-and-down: "only screen and (max-width : #{$xsmall-screen})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Global variables
+:root {
+    --body-text-color: #333333;
+    --color-primary: #ff6c00; /* any format you want here */
+    --color-primary-darker: hsl(from var(--color-primary) h s calc(l - 5%));
+    --color-primary-darkest: hsl(from var(--color-primary) h s calc(l - 10%));
+  
+    --btn-large-height: 2.5em;
+    --btn-large-radius: 2.5em;
+    --btn-large-font-size: 1.3rem;
+  
+    --navbar-height: 4.5em;
+  
+    @media #{$small-and-up} {
+      --navbar-height: 5.5em;
+    }
+  }
+  
+  $main-padding-neg: -16px;
+  $main-padding-px: 16px;

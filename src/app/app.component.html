@@ -1,3 +1,4 @@
-<div class="container">
-  <router-outlet></router-outlet>
+<navbar *ngIf="navbar.isEnabled" class="{{navbar.cssClass}}"></navbar>
+<div class="container {{product}} {{navbar.cssClass}}">
+    <router-outlet></router-outlet>
 </div>
