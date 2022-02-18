@@ -14,6 +14,9 @@ export interface IResources {
 
     CodePage_Title: string | null;
     CodePage_SubmitButton: string | null;
+
+    SetPasswordPage_Title: string | null;
+    SetPasswordPage_SubmitButton: string | null;
     
     Username_Mode: UsernameModes | null;
     Display_Labels: 'true' | 'false' | null;

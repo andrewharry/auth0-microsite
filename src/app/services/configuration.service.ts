@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Environment, Auth0Config, OtpConfig, PasswordConfig, IdpConfig } from '../../environments/interfaces';
+import { Environment, Auth0Config, OtpConfig, PasswordConfig, IdpConfig, Country, Product } from '../../environments/interfaces';
 import { environment } from '../../environments/environment';
 
 declare global {
@@ -17,8 +17,17 @@ export type Auth0ExtraParams = {
 })
 export class ConfigurationService {
 
-  get cfg(): Environment {
-    return environment;
+  get product(): Product { return environment.product; }
+
+  get country(): Country {
+    switch(environment.product) {
+      case Product.HummAU: return Country.AU;
+      case Product.HummNZ: return Country.NZ;
+      case Product.HummCA: return Country.CA;
+      case Product.BundllAU: return Country.AU;
+      case Product.BundllNZ: return Country.NZ;
+      default: throw new Error(`Country not set for ${environment.product}`);
+    }
   }
 
   get isProduction(): boolean {
@@ -26,26 +35,26 @@ export class ConfigurationService {
   }
 
   get passwordConfig(): PasswordConfig {
-    return this.cfg.password;
+    return environment.password;
   }
 
   get otpConfig(): OtpConfig {
-    return this.cfg.otp;
+    return environment.otp;
   }
 
   get idpConfig(): IdpConfig {
-    return this.cfg.idp;
+    return environment.idp;
   }
 
   get auth0Config() : Auth0Config {
     const windowConfig = window.auth0Config;
 
     return {
-      domain: windowConfig?.auth0Domain ?? this.cfg.auth0?.domain,
-      clientID: windowConfig?.clientID ?? this.cfg.auth0?.clientID,
-      audience: (windowConfig?.extraParams?.audience || windowConfig?.auth0Tenant) ?? this.cfg.auth0?.audience,
-      redirectUri: windowConfig?.callbackURL ?? this.cfg.auth0?.redirectUri,
-      state: windowConfig?.internalOptions?.state ?? this.cfg.auth0?.state
+      domain: windowConfig?.auth0Domain ?? environment.auth0?.domain,
+      clientID: windowConfig?.clientID ?? environment.auth0?.clientID,
+      audience: (windowConfig?.extraParams?.audience || windowConfig?.auth0Tenant) ?? environment.auth0?.audience,
+      redirectUri: windowConfig?.callbackURL ?? environment.auth0?.redirectUri,
+      state: windowConfig?.internalOptions?.state ?? environment.auth0?.state
     };
   }
 }
