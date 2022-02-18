@@ -21,6 +21,7 @@ export interface IResources {
     MobileOrEmail_Label: string | null;
     Email_Label: string | null;
     Password_Label: string | null;
+    Code_Label: string | null;
     FormField_Appearance: string | null;
 
     ForgotPage_Title: string | null;
@@ -35,7 +36,7 @@ export interface IResources {
     Theme_BodyTextColor: string | null;
 }
 
-export type LabelKeys = 'Mobile_Label' | 'MobileOrEmail_Label' | 'Email_Label'| 'Password_Label';
+export type LabelKeys = 'Mobile_Label' | 'MobileOrEmail_Label' | 'Email_Label'| 'Password_Label' | 'Code_Label';
 export type UsernameModes = 'mobile_only' | 'email_only' | 'mobile_or_email'| 'mobile_only_on_native';
 export type NavbarModes = 'mobile' | 'desktop' | 'both';
 export type EnableKeys = 'Navbar_Enabled' | 'Display_Labels';

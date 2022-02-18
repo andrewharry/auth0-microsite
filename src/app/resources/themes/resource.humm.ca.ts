@@ -25,6 +25,7 @@ var resources : IResources = {
     MobileOrEmail_Label: null,
     Email_Label: null,
     Password_Label: null,
+    Code_Label: null,
     FormField_Appearance: null,
 
     ForgotPage_Title: `Reset your<br />password`,

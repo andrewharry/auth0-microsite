@@ -15,7 +15,7 @@ var resources : IResources = {
     MobilePage_SubmitButton: 'Let’s go',
     MobilePage_SignInButton: 'Already have an account? Sign in',
 
-    CodePage_Title: '<h1>Just checking it’s you.</h1><h3>We sent you a verfication code.<br class="mobile-only">Please enter it here.<h3>',
+    CodePage_Title: '<h1>Just checking it’s you.</h1><h3>We sent you a verfication code. <br class="mobile-only">Please enter it here.<h3>',
     CodePage_SubmitButton: 'Let’s go',
     CodePage_SignInButton: 'Already have an account? Sign in',
 
@@ -25,6 +25,7 @@ var resources : IResources = {
     MobileOrEmail_Label: 'Email or mobile number',
     Email_Label: 'Email address',
     Password_Label: 'Password',
+    Code_Label: 'Enter the code',
     FormField_Appearance: 'fill',
 
     ForgotPage_Title: 'Change your Password.',

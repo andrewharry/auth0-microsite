@@ -25,7 +25,6 @@ export class PhoneNumberComponent {
     
     this.requestInProgress = true;
     try {
-      debugger
       let number = this.form.value['mobile'];
       await this.authService.sendOTP(number);
       this.router.navigate([Routes.PhoneVerify], {

@@ -39,15 +39,9 @@ export class AuthService {
         phoneNumber,
         connection: Auth0Connection.Sms,
         send: Auth0Send.Code,
-      },
-      (result: any, error: Auth0Error) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(result);
-      }
-    );
+      }, (err, res) => {
+        err ? reject(err) : resolve(res);
+      });
     });
   }
 
