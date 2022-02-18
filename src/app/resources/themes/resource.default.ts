@@ -15,6 +15,10 @@ var resources : IResources = {
     MobilePage_SubmitButton: 'Let’s go',
     MobilePage_SignInButton: 'Already have an account? Sign in',
 
+    CodePage_Title: '<h1>Just checking it’s you.</h1><h3>We sent you a verfication code.<br class="mobile-only">Please enter it here.<h3>',
+    CodePage_SubmitButton: 'Let’s go',
+    CodePage_SignInButton: 'Already have an account? Sign in',
+
     Username_Mode: 'mobile_or_email',
     Display_Labels: 'false',
     Mobile_Label: 'Mobile number',

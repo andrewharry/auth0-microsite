@@ -16,6 +16,7 @@ import { NavbarComponent } from './common/components/navbar.component';
 import { PasswordInputComponent } from './common/components/password-input.component';
 import { UsernameInputComponent } from './common/components/username-input.component';
 import { MobileInputComponent } from './common/components/mobile-input.component';
+import { CodeInputComponent } from './common/components/code-input.component';
 import { ForgotPasswordLink } from './common/components/forgot-password-link';
 import { DirectivesModule } from './common/directives/directives.module';
 import { ResourceModule } from './resources/resource.module';
@@ -53,6 +54,7 @@ declare global {
     PasswordInputComponent,
     UsernameInputComponent,
     MobileInputComponent,
+    CodeInputComponent,
     ForgotPasswordLink,
     ForgotPasswordComponent
   ],

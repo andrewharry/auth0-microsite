@@ -11,6 +11,9 @@ export interface IResources {
     MobilePage_Title: string | null;
     MobilePage_SubmitButton: string | null;
     MobilePage_SignInButton: string | null;
+
+    CodePage_Title: string | null;
+    CodePage_SubmitButton: string | null;
     
     Username_Mode: UsernameModes | null;
     Display_Labels: 'true' | 'false' | null;

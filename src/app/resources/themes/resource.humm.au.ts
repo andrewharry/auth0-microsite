@@ -15,6 +15,10 @@ var resources : IResources = {
     MobilePage_SubmitButton: null,
     MobilePage_SignInButton: null,
 
+    CodePage_Title: null,
+    CodePage_SubmitButton: null,
+    CodePage_SignInButton: null,
+
     Username_Mode: 'mobile_only_on_native',
     Display_Labels: 'true',
     Mobile_Label: null,
