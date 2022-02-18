@@ -1,0 +1,14 @@
+<main>
+  <header>
+    <div innerHTML="{{'MobilePage_Title' | resource}}"></div>
+  </header>
+  <form id="landing" class="mat-form-large mb-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mobile-input name="mobile" [form]="form"></mobile-input>
+  </form>
+  <footer>
+    <button class="btn-large btn-primary" mat-button mat-flat-button color="primary" type="submit" form="landing" [disabled]="requestInProgress" [loading]="requestInProgress">
+      {{'MobilePage_SubmitButton' | resource}}
+    </button>
+    <a class="btn-large btn-secondary" mat-stroked-button color="primary" routerLink="/Login">{{'MobilePage_SignInButton' | resource}}</a>
+  </footer>
+</main>

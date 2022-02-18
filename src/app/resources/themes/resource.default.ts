@@ -11,11 +11,15 @@ var resources : IResources = {
     LandingPage_SubmitButton: 'Sign In',
     LandingPage_RegisterButton: 'New to humm? Sign up',
 
+    MobilePage_Title: '<h1>Let’s get you started.</h1><h3>Enter your mobile number to join <strong>humm</strong><h3>',
+    MobilePage_SubmitButton: 'Let’s go',
+    MobilePage_SignInButton: 'Already have an account? Sign in',
+
     Username_Mode: 'mobile_or_email',
     Display_Labels: 'false',
-    Mobile_Label: 'Mobile',
+    Mobile_Label: 'Mobile number',
     MobileOrEmail_Label: 'Email or mobile number',
-    Email_Label: 'Email',
+    Email_Label: 'Email address',
     Password_Label: 'Password',
     FormField_Appearance: 'fill',
 

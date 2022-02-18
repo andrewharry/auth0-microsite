@@ -15,13 +15,17 @@ import { MaterialModule } from './common/material.module';
 import { NavbarComponent } from './common/components/navbar.component';
 import { PasswordInputComponent } from './common/components/password-input.component';
 import { UsernameInputComponent } from './common/components/username-input.component';
+import { MobileInputComponent } from './common/components/mobile-input.component';
 import { ForgotPasswordLink } from './common/components/forgot-password-link';
 import { DirectivesModule } from './common/directives/directives.module';
 import { ResourceModule } from './resources/resource.module';
 
 // Pages
-import { LandingComponent } from './pages/landing/landing.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PhoneNumberComponent } from './pages/phone-number/phone-number.component';
+import { PhoneVerifyComponent } from './pages/phone-verify/phone-verify.component';
+import { SetPasswordComponent } from './pages/set-password/set-password.component';
+import { ForgotPasswordComponent } from './pages/forgot/forgot-password.component';
 
 //Services
 import { AuthService } from './services/auth.service';
@@ -42,9 +46,13 @@ declare global {
   declarations: [
     NavbarComponent,
     AppComponent,
-    LandingComponent,
+    LoginComponent,
+    PhoneNumberComponent,
+    PhoneVerifyComponent,
+    SetPasswordComponent,
     PasswordInputComponent,
     UsernameInputComponent,
+    MobileInputComponent,
     ForgotPasswordLink,
     ForgotPasswordComponent
   ],

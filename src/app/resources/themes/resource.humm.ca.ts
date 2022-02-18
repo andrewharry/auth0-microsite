@@ -11,6 +11,10 @@ var resources : IResources = {
     LandingPage_SubmitButton: null,
     LandingPage_RegisterButton: null,
 
+    MobilePage_Title: null,
+    MobilePage_SubmitButton: null,
+    MobilePage_SignInButton: null,
+
     Username_Mode: null,
     Display_Labels: 'false',
     Mobile_Label: null,

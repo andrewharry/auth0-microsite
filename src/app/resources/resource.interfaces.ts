@@ -7,6 +7,10 @@ export interface IResources {
     LandingPage_Title: string | null;
     LandingPage_SubmitButton: string | null;
     LandingPage_RegisterButton: string | null;
+
+    MobilePage_Title: string | null;
+    MobilePage_SubmitButton: string | null;
+    MobilePage_SignInButton: string | null;
     
     Username_Mode: UsernameModes | null;
     Display_Labels: 'true' | 'false' | null;
@@ -28,6 +32,7 @@ export interface IResources {
     Theme_BodyTextColor: string | null;
 }
 
+export type LabelKeys = 'Mobile_Label' | 'MobileOrEmail_Label' | 'Email_Label'| 'Password_Label';
 export type UsernameModes = 'mobile_only' | 'email_only' | 'mobile_or_email'| 'mobile_only_on_native';
 export type NavbarModes = 'mobile' | 'desktop' | 'both';
 export type EnableKeys = 'Navbar_Enabled' | 'Display_Labels';

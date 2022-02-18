@@ -1,5 +1,6 @@
 @import "./material.scss";
 @import "./variables.scss";
+@import "./utilities/spacing";
 @import "./fonts/proxima-nova";
 
 html,
@@ -184,7 +185,8 @@ main {
 }
 
 username-input,
-password-input {
+password-input,
+mobile-input {
   display: block;
   width: 100%;
 

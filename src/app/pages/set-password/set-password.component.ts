@@ -4,10 +4,10 @@ import { AuthService } from '../../services/auth.service';
 import { SnackBarService } from '../../services/snack-bar.service';
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html'
+  selector: 'app-set-password',
+  templateUrl: './set-password.component.html'
 })
-export class LandingComponent {
+export class SetPasswordComponent {
   public requestInProgress: boolean = false;
   public form!: FormGroup;
 

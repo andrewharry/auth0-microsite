@@ -1,4 +1,7 @@
 export default {
-    Landing: 'Login',
-    ForgotPassword: 'Forgot'
+    Login: 'Login',
+    ForgotPassword: 'Forgot',
+    PhoneNumber: 'Phone-Number',
+    PhoneVerify: 'Phone-Verify',
+    SetPassword: 'Set-Password'
 }

@@ -5,7 +5,7 @@ import ResourceDefault from './themes/resource.default';
 import BundllAu from './themes/resource.bundll.au';
 import HummAu from './themes/resource.humm.au';
 import HummCa from './themes/resource.humm.ca';
-import { IResources, ThemeKeys, EnableKeys } from './resource.interfaces';
+import { IResources, ThemeKeys, EnableKeys, LabelKeys } from './resource.interfaces';
 
 @Injectable({
     providedIn: 'root'
@@ -29,6 +29,10 @@ export class ResourceFactory {
     public IsEnabled(key: EnableKeys): boolean {
         let value = this.GetResource(key);
         return value === 'true'
+    }
+
+    public GetByLabel(key: LabelKeys): string {
+        return this.GetResource(key);
     }
 
     public GetByTheme(key: ThemeKeys): string {

@@ -17,18 +17,19 @@ export class UsernameInputService {
     if (mode == 'mobile_only_on_native') 
       mode = deviceWidth.isMobile ? 'mobile_only' : 'mobile_or_email';    
 
+    //Default to email
+    this.type = "email";
+
     switch (mode) {
       case 'email_only':
-        this.type = "email";
-        this.label = resources.GetResource('Email_Label');
+        this.label = resources.GetByLabel('Email_Label');
         break;
       case 'mobile_or_email': 
-        this.type = "email";
-        this.label = resources.GetResource('MobileOrEmail_Label');
+        this.label = resources.GetByLabel('MobileOrEmail_Label');
         break;        
       case 'mobile_only':
         this.type = "tel";
-        this.label = resources.GetResource('Mobile_Label');
+        this.label = resources.GetByLabel('Mobile_Label');
           break;
     }
   }
